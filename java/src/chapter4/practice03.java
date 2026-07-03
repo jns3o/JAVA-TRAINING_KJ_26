@@ -36,11 +36,21 @@ public class practice03 {
 //		}
 //-------(3)------------------------------------------			
 		
-//		 *
-//		***
+//	 	 *
+//	 	***
 //	   *****	
 //	  *******	
-//	 *********	
+//	 *********
+		for (int q = 9; q >= 1; q++) {
+		for (int s = 1; s <= 4; s++) {
+			System.out.print(" ");
+		}
+		for (int t = 1; t <= q; t++) {
+			System.out.println("*");
+		}
+			System.out.println();
+			int y = 3;
+		
 		
 		
 		
@@ -62,4 +72,5 @@ public class practice03 {
 		
 	}
 
+}
 }
