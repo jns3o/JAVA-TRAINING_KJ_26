@@ -50,6 +50,7 @@ public class practice03 {
 		}
 			System.out.println();
 			int y = 3;
+			
 		
 		
 		
