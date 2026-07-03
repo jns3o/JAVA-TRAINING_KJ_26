@@ -7,16 +7,16 @@ public class numberBaseballGame {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("¼ıÀÚ¾ß±¸°ÔÀÓÀÔ´Ï´Ù");
+		System.out.println("ìˆ«ìì•¼êµ¬ê²Œì„ì…ë‹ˆë‹¤");
 		System.out.println();
-		System.out.println("³­ÀÌµµ´Â 'EASY' 'NORMAL' 'HARD' ¸ğµå°¡ Á¸ÀçÇÏ¸ç");
-		System.out.println("EASY¿¡¼­´Â 20È¸, NORMAL¿¡¼­´Â 10È¸, HARD¿¡¼­´Â 5È¸ÀÇ ±âÈ¸°¡ ÁÖ¾îÁı´Ï´Ù");
-		System.out.println("¼ıÀÚ´Â 4°³¸¦ ¸ÂÃß½ÃµÇ Áßº¹Àº ¾øÀ¸¸ç 0¶ÇÇÑ Æ÷ÇÔÀÔ´Ï´Ù");
-		System.out.println("¼ıÀÚ´Â ¸ÂÁö¸¸ À§Ä¡°¡ ¸ÂÁö ¾ÊÀ» ½Ã 'º¼'");
-		System.out.println("¼ıÀÚÀÇ À§Ä¡°¡ ¿Ç´Ù¸é '½ºÆ®¶óÀÌÅ©'");
-		System.out.println("°¢°¢ÀÇ º¼°ú ½ºÆ®¶óÀÌÅ©´Â ¼ıÀÚ·Î Ç¥½ÃµÇ¸ç, ¼ıÀÚ°¡ º¼ /½ºÆ®¶óÀÌÅ© ¸ğµÎ ¾øÀ» ½Ã '¾Æ¿ô'ÀÔ´Ï´Ù");
+		System.out.println("ë‚œì´ë„ëŠ” 'EASY' 'NORMAL' 'HARD' ëª¨ë“œê°€ ì¡´ì¬í•˜ë©°");
+		System.out.println("EASYì—ì„œëŠ” 20íšŒ, NORMALì—ì„œëŠ” 10íšŒ, HARDì—ì„œëŠ” 5íšŒì˜ ê¸°íšŒê°€ ì£¼ì–´ì§‘ë‹ˆë‹¤");
+		System.out.println("ìˆ«ìëŠ” 4ê°œë¥¼ ë§ì¶”ì‹œë˜ ì¤‘ë³µì€ ì—†ìœ¼ë©° 0ë˜í•œ í¬í•¨ì…ë‹ˆë‹¤");
+		System.out.println("ìˆ«ìëŠ” ë§ì§€ë§Œ ìœ„ì¹˜ê°€ ë§ì§€ ì•Šì„ ì‹œ 'ë³¼'");
+		System.out.println("ìˆ«ìì˜ ìœ„ì¹˜ê°€ ì˜³ë‹¤ë©´ 'ìŠ¤íŠ¸ë¼ì´í¬'");
+		System.out.println("ê°ê°ì˜ ë³¼ê³¼ ìŠ¤íŠ¸ë¼ì´í¬ëŠ” ìˆ«ìë¡œ í‘œì‹œë˜ë©°, ìˆ«ìê°€ ë³¼ /ìŠ¤íŠ¸ë¼ì´í¬ ëª¨ë‘ ì—†ì„ ì‹œ 'ì•„ì›ƒ'ì…ë‹ˆë‹¤");
 		System.out.println();
-		System.out.println("---°ÔÀÓ ½ÃÀÛ¿¡ ¾Õ¼­ ¿øÇÏ´Â ³­ÀÌµµ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä---");
+		System.out.println("---ê²Œì„ ì‹œì‘ì— ì•ì„œ ì›í•˜ëŠ” ë‚œì´ë„ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”---");
 		
 		System.out.print("MODE: ");
 		String difficult = (sc.next());
@@ -28,7 +28,7 @@ public class numberBaseballGame {
 		
 		
 		
-		System.out.println("-----ÀÔ·ÂÇÏ½Ã°íÀÚ ÇÏ´Â ¼ıÀÚ¸¦ ¼ø¼­´ë·Î ÀÔ·ÂÇØÁÖ¼¼¿ä-----");
+		System.out.println("-----ì…ë ¥í•˜ì‹œê³ ì í•˜ëŠ” ìˆ«ìë¥¼ ìˆœì„œëŒ€ë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”-----");
 		System.out.print("1) ");
 		double han1 = Double.parseDouble(sc.next());
 		System.out.print("2) ");
@@ -38,10 +38,10 @@ public class numberBaseballGame {
 		System.out.print("4) ");
 		double han4 = Double.parseDouble(sc.next());
 		
-        Random r = new Random(); // ·£´ı ¼ıÀÚ »Ì±â À§ÇÑ ¼ÂÆÃ
+        Random r = new Random(); // ëœë¤ ìˆ«ì ë½‘ê¸° ìœ„í•œ ì…‹íŒ…
 		
-		// ¾ß±¸°ÔÀÓ ¼ıÀÚ 4°³ (¾ÆÁ÷ Áßº¹Á¦°Å ¾øÀ½)
-		int numarr[] = new int[4]; // 4Ä­Â¥¸® ºó ¹è¿­
+		// ì•¼êµ¬ê²Œì„ ìˆ«ì 4ê°œ (ì•„ì§ ì¤‘ë³µì œê±° ì—†ìŒ)
+		int numarr[] = new int[4]; // 4ì¹¸ì§œë¦¬ ë¹ˆ ë°°ì—´
 		
 		for (int i = 0; i < 4; i++) {
 			numarr[i] = r.nextInt(0,9);

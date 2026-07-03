@@ -6,36 +6,36 @@ public class exam2 {
 
 	public static void main(String[] args) throws Exception {
 		/**
-		 * ±âº» Å¸ÀÔ - Á¤¼öÇü byte : 1byte -> 256°¡Áö > -128~127 short : 2byte -> 65536 >
-		 * -32768~32767 int : 4byte -> 2ÀÇ32Á¦°ö (¾à 43¾ï°³) Long : 8byte -> 2ÀÇ64Á¦°ö (int¹üÀ§¸¦
-		 * ¹ş¾î³ª´Â ¼ıÀÚ¸¦ ¹ş¾î³¯¶§ 'L' Ç¥½Ã)
+		 * ê¸°ë³¸ íƒ€ì… - ì •ìˆ˜í˜• byte : 1byte -> 256ê°€ì§€ > -128~127 short : 2byte -> 65536 >
+		 * -32768~32767 int : 4byte -> 2ì˜32ì œê³± (ì•½ 43ì–µê°œ) Long : 8byte -> 2ì˜64ì œê³± (intë²”ìœ„ë¥¼
+		 * ë²—ì–´ë‚˜ëŠ” ìˆ«ìë¥¼ ë²—ì–´ë‚ ë•Œ 'L' í‘œì‹œ)
 		 * 
-		 * char(¹®ÀÚÇü) : 2byte(À¯´ÏÄÚµå) -> 65536°¡Áö > 0~65535
+		 * char(ë¬¸ìí˜•) : 2byte(ìœ ë‹ˆì½”ë“œ) -> 65536ê°€ì§€ > 0~65535
 		 * 
-		 * ±âº» Å¸ÀÔ - ½Ç¼öÇü float : 4bte (¼Ò¼ıÁ¡ »ç¿ë½Ã F Ç¥½Ã) double : 8byte
+		 * ê¸°ë³¸ íƒ€ì… - ì‹¤ìˆ˜í˜• float : 4bte (ì†Œìˆ«ì  ì‚¬ìš©ì‹œ F í‘œì‹œ) double : 8byte
 		 * 
-		 * Å¬·¡½º Å¸ÀÔ(±âº»Å¸ÀÔ X) String : ¹®ÀÚ¿­ (Å©±âx)
+		 * í´ë˜ìŠ¤ íƒ€ì…(ê¸°ë³¸íƒ€ì… X) String : ë¬¸ìì—´ (í¬ê¸°x)
 		 */
 
 		/*
-		 * ³í¸®Çü boolean : 2°¡Áö Á¾·ùÀÇ °ª(true / false)
+		 * ë…¼ë¦¬í˜• boolean : 2ê°€ì§€ ì¢…ë¥˜ì˜ ê°’(true / false)
 		 */
 		int a = 3, b = 5;
 		boolean result = a < b;
 		System.out.println(a < b);
 
-		// Å¸ÀÔº¯È¯
+		// íƒ€ì…ë³€í™˜
 		int num1;
 		short num2 = 10;
-		// ÀÚµ¿Çüº¯È¯ (ÀÛÀºÅ¸ÀÔ > Å«Å¸ÀÔ ´ëÀÔ)
+		// ìë™í˜•ë³€í™˜ (ì‘ì€íƒ€ì… > í°íƒ€ì… ëŒ€ì…)
 		num1 = num2;
 		// System.out.println(num1);
 
 		num1 = 50;
-		// °­Á¦Çüº¯È¯ ( Å«Å¸ÀÔ>ÀÛÀºÅ¸ÀÔ ´ëÀÔ)
+		// ê°•ì œí˜•ë³€í™˜ ( í°íƒ€ì…>ì‘ì€íƒ€ì… ëŒ€ì…)
 		num2 = (short) num1;
 
-		// ÀÛÀºÅ¸ÀÔ _________________ Å«Å¸ÀÔ
+		// ì‘ì€íƒ€ì… _________________ í°íƒ€ì…
 		// byte < short(char) < int < long < float < double
 		char ch = 'A';
 		int num3 = ch;
@@ -47,7 +47,7 @@ public class exam2 {
 		byte btsum = (byte) (bt1 + bt2);
 		// System.out.println(btsum);
 
-		// 100p ¿¹Á¦ »ı°¢´õÇÏ±â
+		// 100p ì˜ˆì œ ìƒê°ë”í•˜ê¸°
 		byte value1 = 10;
 		int value2 = 100;
 		long value3 = 1000L;
@@ -59,9 +59,9 @@ public class exam2 {
 		System.out.println(Integer.parseInt("1") + 5);
 
 		// print
-		// println > in > line(ÇÑÁÙ
-		// printf > f > format(Çü½Ä)
-		// -> Çü½ÄÁöÁ¤ÀÚ - %d(Á¤¼ö) %f(½Ç¼öÇü) %s(¹®ÀÚ¿­) %c(¹®ÀÚÇü) ..
+		// println > in > line(í•œì¤„
+		// printf > f > format(í˜•ì‹)
+		// -> í˜•ì‹ì§€ì •ì - %d(ì •ìˆ˜) %f(ì‹¤ìˆ˜í˜•) %s(ë¬¸ìì—´) %c(ë¬¸ìí˜•) ..
 
 		// System.out.printf("printf result : %d + %d + %d = %d", value1, value2,
 		// value3, (value1 + value2 + value3));
@@ -74,10 +74,10 @@ public class exam2 {
 
 		// My name is OOO and I'm OO years old
 		System.out.printf("%s %s %s %d %s", st1, name, st2, age, st3);
-		// String(¹®ÀÚ¿­)=S(¹®ÀÚ¿­) ÀÌ±â ¶§¹®¿¡ "My name is"°°Àº ¹®ÀÚ·Î ¾´ ¹®ÀåÀº %s·Î ÇØ¾ßÇÔ
-		// age 22´Â ¼ıÀÚ(Á¤¼ö)ÀÌ±â ¶§¹®¿¡ int - %d·Î ÇØ¾ßÇÔ
-		// %s¸¦ ÀÔ·Â ÈÄ +°¡ ¾Æ´Ñ ,[½°Ç¥]¸¦ ÀÔ·ÂÇØÁà¾ßÇÔ. +À» ÀÔ·Â ½Ã ¸ğµç°Ô ÇÏ³ª·Î ÇÕÃÄÁö·Á ÇÏ±â ¶§¹®¿¡
-		// +°¡ ¾Æ´Ñ ,[½°Ç¥]¸¦ ÀÔ·ÂÇØÁÖ¾î¾ßÇÔ
+		// String(ë¬¸ìì—´)=S(ë¬¸ìì—´) ì´ê¸° ë•Œë¬¸ì— "My name is"ê°™ì€ ë¬¸ìë¡œ ì“´ ë¬¸ì¥ì€ %së¡œ í•´ì•¼í•¨
+		// age 22ëŠ” ìˆ«ì(ì •ìˆ˜)ì´ê¸° ë•Œë¬¸ì— int - %dë¡œ í•´ì•¼í•¨
+		// %së¥¼ ì…ë ¥ í›„ +ê°€ ì•„ë‹Œ ,[ì‰¼í‘œ]ë¥¼ ì…ë ¥í•´ì¤˜ì•¼í•¨. +ì„ ì…ë ¥ ì‹œ ëª¨ë“ ê²Œ í•˜ë‚˜ë¡œ í•©ì³ì§€ë ¤ í•˜ê¸° ë•Œë¬¸ì—
+		// +ê°€ ì•„ë‹Œ ,[ì‰¼í‘œ]ë¥¼ ì…ë ¥í•´ì£¼ì–´ì•¼í•¨
 
 		int year = 2026;
 		
@@ -85,8 +85,8 @@ public class exam2 {
 		int day = 29;
 
 		/*
-		 * System.out.println(year + "³â" + month + "¿ù" + day + "ÀÏ");
-		 * System.out.printf("%d³â%d¿ù%dÀÏ", year, month, day);
+		 * System.out.println(year + "ë…„" + month + "ì›”" + day + "ì¼");
+		 * System.out.printf("%dë…„%dì›”%dì¼", year, month, day);
 		 */
 
 		// _ _ _ _ _ _ _
@@ -95,7 +95,7 @@ public class exam2 {
 	   // int keyCode = System.in.read();
 		//System.out.println("KeyCode : " + keyCode);
 		//System.out.printf("KeyCode : %c\n", + keyCode);
-		//ÇÑ±Û ÀÎ½ÄÀ» ¸øÇÔ
+		//í•œê¸€ ì¸ì‹ì„ ëª»í•¨
 		
 		Scanner scanner = new Scanner(System.in);
 		String inputName = scanner.nextLine();

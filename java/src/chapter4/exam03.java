@@ -11,16 +11,16 @@ public class exam03 {
 //			System.out.println("sum :" + sum);
 //			System.out.println("i : " + i);
 //		    sum = sum + 1;
-//			System.out.println("°è»ê ÈÄÀÇ sum : " + sum);
-//			System.out.println("------¹İº¹ÇÒ ³»¿ë ³¡-------");
+//			System.out.println("ê³„ì‚° í›„ì˜ sum : " + sum);
+//			System.out.println("------ë°˜ë³µí•  ë‚´ìš© ë-------");
 //		}
 		String input = "";
 		Scanner sc = new Scanner(System.in);
 		sum = 0;
 		while(!input.equals("q")) {
-			System.out.println("Á¾·áÇÏ½Ã·Á¸é q¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
+			System.out.println("ì¢…ë£Œí•˜ì‹œë ¤ë©´ që¥¼ ì…ë ¥í•˜ì„¸ìš”.");
 			input = sc.nextLine();
-			System.out.println("input¿¡´Â " + input + "ÀÌ ÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
+			System.out.println("inputì—ëŠ” " + input + "ì´ ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}
 		
 		

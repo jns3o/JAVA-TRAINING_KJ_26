@@ -3,9 +3,9 @@ package chapter4;
 public class exam04 {
 
 	public static void main(String[] args) {
-		// i´Â ´Ü¼ö(2~9)
+		// iëŠ” ë‹¨ìˆ˜(2~9)
 		for(int i = 2; i <= 9; i++) {
-			// j´Â i´ÜÀÇ °öÇØÁö´Â ¼ö(1~9)
+			// jëŠ” ië‹¨ì˜ ê³±í•´ì§€ëŠ” ìˆ˜(1~9)
 			for(int j = 1; j <= 9; j++) {
 			//System.out.println(i + "x" + j + "=" + (i * j));
 			//System.out.printf("%d x %d = %d", i, j, i * j);

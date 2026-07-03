@@ -17,9 +17,9 @@ public class exam01 {
 		int y = 5;
 		System.out.println("x: " + x + " / y : " + y);
 		/*
-		 * Ctrl + Alt + ¾Æ·¡¹æÇâÅ° : ÄÚµå ÇÑ ÁÙ º¹»ç 
-		 * Alt + ¾Æ·¡¹æÇâÅ° : ÁÙ ¾Æ·¡·Î ³»¸®±â
-		 * Ctrl + Shift + F : µé¿©¾²±â Á¤¸®
+		 * Ctrl + Alt + ì•„ë˜ë°©í–¥í‚¤ : ì½”ë“œ í•œ ì¤„ ë³µì‚¬ 
+		 * Alt + ì•„ë˜ë°©í–¥í‚¤ : ì¤„ ì•„ë˜ë¡œ ë‚´ë¦¬ê¸°
+		 * Ctrl + Shift + F : ë“¤ì—¬ì“°ê¸° ì •ë¦¬
 		 */
 		//int temp = x;
 		//x = y;
@@ -28,10 +28,10 @@ public class exam01 {
 		
 		byte bt1 = 100;
 		byte bt2 = -100;
-		//byte bt3 = 128; // ¹üÀ§ ¹ş¾î³²
+		//byte bt3 = 128; // ë²”ìœ„ ë²—ì–´ë‚¨
 		short st3 = 128;
 		short st2 = 30000;
-		//short st3 = 100000; // ¹üÀ§ ¹ş¾î³²
+		//short st3 = 100000; // ë²”ìœ„ ë²—ì–´ë‚¨
 		int it1 = 150000;
 		int it2 = 95000000;
 		//int it3 = 2200000000;
@@ -46,13 +46,13 @@ public class exam01 {
 		
 		
 		
-		//String name = "¼­ÁØ¼­";
+		//String name = "ì„œì¤€ì„œ";
 		//String job = "programer";
 		
-		//String str1 = "³» ÀÌ¸§Àº " + name + " ÀÌ°í¿ä,\nÁ÷¾÷Àº " + job + "ÀÔ´Ï´Ù";
+		//String str1 = "ë‚´ ì´ë¦„ì€ " + name + " ì´ê³ ìš”,\nì§ì—…ì€ " + job + "ì…ë‹ˆë‹¤";
 		//System.out.println(str1);
 		
-		//String str2 = "±×´Â »ı°¢À» Çß½À´Ï´Ù. \t'Áı¿¡ °¡°í ½Í´ç...'";
+		//String str2 = "ê·¸ëŠ” ìƒê°ì„ í–ˆìŠµë‹ˆë‹¤. \t'ì§‘ì— ê°€ê³  ì‹¶ë‹¹...'";
 		//System.out.println(str2);
 		//System.out.println(div);
 		int num1;

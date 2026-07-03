@@ -5,58 +5,58 @@ import java.util.Scanner;
 public class exam02 {
 
 	public static void main(String[] args) {
-		System.out.println("¸Ş´º¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä(1~4 ¼±ÅÃ)");
+		System.out.println("ë©”ë‰´ë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”(1~4 ì„ íƒ)");
 		System.out.println("---------------");
-		System.out.println("1. ¾Æ¸Ş¸®Ä«³ë(Hot)");
-		System.out.println("2. ¾Æ¸Ş¸®Ä«³ë(Ice)");
-		System.out.println("3. Äİµåºê·ç(Ice)");
-		System.out.println("4. È­ÀÌÆ® ¹ğ¼î(Ice)");
+		System.out.println("1. ì•„ë©”ë¦¬ì¹´ë…¸(Hot)");
+		System.out.println("2. ì•„ë©”ë¦¬ì¹´ë…¸(Ice)");
+		System.out.println("3. ì½œë“œë¸Œë£¨(Ice)");
+		System.out.println("4. í™”ì´íŠ¸ ë±…ì‡¼(Ice)");
 		System.out.println("---------------");
 		
 		Scanner sc = new Scanner(System.in);
 		int menu = sc.nextInt();
 		
 		if (menu == 1) {
-			System.out.println("¾Æ¸Ş¸®Ä«³ë(Hot)À» ¼±ÅÃÇÏ¼Ì½À´Ï´Ù");
+			System.out.println("ì•„ë©”ë¦¬ì¹´ë…¸(Hot)ì„ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤");
 		}else if (menu == 2) {
-			System.out.println("¾Æ¸Ş¸®Ä«³ë(Ice)¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù");
+			System.out.println("ì•„ë©”ë¦¬ì¹´ë…¸(Ice)ë¥¼ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤");
 		}else if (menu == 3) {
-			System.out.println("Äİµåºê·ç(Ice)¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù.");
+			System.out.println("ì½œë“œë¸Œë£¨(Ice)ë¥¼ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤.");
 		}else if (menu == 4) {
-			System.out.println("È­ÀÌÆ® ¹ğ¼î(Ice)¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù");
+			System.out.println("í™”ì´íŠ¸ ë±…ì‡¼(Ice)ë¥¼ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤");
 		}else {
-			System.out.println("¸Ş´º°¡ ¾Æ´Ñ ´Ù¸¥ ¹øÈ£¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù");			
+			System.out.println("ë©”ë‰´ê°€ ì•„ë‹Œ ë‹¤ë¥¸ ë²ˆí˜¸ë¥¼ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤");			
 		}
 		
 		/*
-		 * switch¹®
-		 * switch (º¯¼ö) {
+		 * switchë¬¸
+		 * switch (ë³€ìˆ˜) {
 		 * case ~ :
-		 *      //case¿¡ ÇØ´çµÇ¸é ½ÇÇàÇÒ ¹®Àå
+		 *      //caseì— í•´ë‹¹ë˜ë©´ ì‹¤í–‰í•  ë¬¸ì¥
 		 * }
 		 * 
-		 *  *case ¿¡ ÀÔ·ÂÇØÁÖ´Â °ªÀº º¯¼öÀÇ ÀÚ·áÇü°ú ¸ÂÃç¼­ ÀÛ¼ºÇØ ÁÖ¾î¾ß ÇÑ´Ù!
-		 *  *°¢ case Æ²ÀÇ ¸¶Áö¸·¿¡ break;¸¦ ³Ö¾îÁÖÁö ¾Ê´Â´Ù¸é Áß´ÜÇÏÁö ¾Ê°í °è¼Ó ÁøÇàµÈ´Ù.
-		 *  (Áï ¸ğµç °ÍÀÌ ´Ù Ãâ·ÂÀÌ µÇ¾î¹ö¸²)
-		 *  *switch¹®Àº ´Ü¼ø µ¿µî ºñ±³¹Û¿¡ ¸øÇÔ.(´ë¼Òºñ±³ x)
-		 *  ¹İº¹¹®¿¡¼­ for°ú whileÀº ÀÚÁÖ ¾²ÀÓ
+		 *  *case ì— ì…ë ¥í•´ì£¼ëŠ” ê°’ì€ ë³€ìˆ˜ì˜ ìë£Œí˜•ê³¼ ë§ì¶°ì„œ ì‘ì„±í•´ ì£¼ì–´ì•¼ í•œë‹¤!
+		 *  *ê° case í‹€ì˜ ë§ˆì§€ë§‰ì— break;ë¥¼ ë„£ì–´ì£¼ì§€ ì•ŠëŠ”ë‹¤ë©´ ì¤‘ë‹¨í•˜ì§€ ì•Šê³  ê³„ì† ì§„í–‰ëœë‹¤.
+		 *  (ì¦‰ ëª¨ë“  ê²ƒì´ ë‹¤ ì¶œë ¥ì´ ë˜ì–´ë²„ë¦¼)
+		 *  *switchë¬¸ì€ ë‹¨ìˆœ ë™ë“± ë¹„êµë°–ì— ëª»í•¨.(ëŒ€ì†Œë¹„êµ x)
+		 *  ë°˜ë³µë¬¸ì—ì„œ forê³¼ whileì€ ìì£¼ ì“°ì„
 		 */
 		
 //		switch(menu) {
 //		case 1:
-//			System.out.println("¾Æ¸Ş¸®Ä«³ë(Hot)À» ¼±ÅÃÇÏ¼Ì½À´Ï´Ù");
+//			System.out.println("ì•„ë©”ë¦¬ì¹´ë…¸(Hot)ì„ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤");
 //			break;
 //		case 2:
-//			System.out.println("¾Æ¸Ş¸®Ä«³ë(Ice)¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù");
+//			System.out.println("ì•„ë©”ë¦¬ì¹´ë…¸(Ice)ë¥¼ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤");
 //			break;
 //		case 3:
-//			System.out.println("Äİµåºê·ç(Ice)¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù.");
+//			System.out.println("ì½œë“œë¸Œë£¨(Ice)ë¥¼ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤.");
 //			break;
 //		case 4:
-//			System.out.println("È­ÀÌÆ® ¹ğ¼î(Ice)¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù");
+//			System.out.println("í™”ì´íŠ¸ ë±…ì‡¼(Ice)ë¥¼ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤");
 //			break;
 //		default:
-//				System.out.println("¸Ş´º°¡ ¾Æ´Ñ ´Ù¸¥ ¹øÈ£¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù");	
+//				System.out.println("ë©”ë‰´ê°€ ì•„ë‹Œ ë‹¤ë¥¸ ë²ˆí˜¸ë¥¼ ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤");	
 //			
 			
 		
