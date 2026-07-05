@@ -6,47 +6,76 @@ import java.util.Scanner;
 public class numberBaseballGame {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("ìˆ«ìì•¼êµ¬ê²Œì„ì…ë‹ˆë‹¤");
+		Scanner sc = new Scanner(System.in); // ¹Ø¿¡¼­ ¸ğµå ¼±ÅÃ°ª ÀÔ·Â ¹× ¼ıÀÚ ÀÔ·ÂÀ» À§ÇØ scanner¸¦ »ç¿ë
+		Random r = new Random(); // ·£´ı ¼ıÀÚ »Ì±â À§ÇÑ ¼ÂÆÃ
+		// ¾ß±¸°ÔÀÓ ¼ıÀÚ 4°³ (¾ÆÁ÷ Áßº¹Á¦°Å ¾øÀ½)
+		int ran[] = new int[4]; // 4Ä­Â¥¸® ºó ¹è¿­
+		
+		
+		System.out.println("¼ıÀÚ¾ß±¸°ÔÀÓÀÔ´Ï´Ù");
 		System.out.println();
-		System.out.println("ë‚œì´ë„ëŠ” 'EASY' 'NORMAL' 'HARD' ëª¨ë“œê°€ ì¡´ì¬í•˜ë©°");
-		System.out.println("EASYì—ì„œëŠ” 20íšŒ, NORMALì—ì„œëŠ” 10íšŒ, HARDì—ì„œëŠ” 5íšŒì˜ ê¸°íšŒê°€ ì£¼ì–´ì§‘ë‹ˆë‹¤");
-		System.out.println("ìˆ«ìëŠ” 4ê°œë¥¼ ë§ì¶”ì‹œë˜ ì¤‘ë³µì€ ì—†ìœ¼ë©° 0ë˜í•œ í¬í•¨ì…ë‹ˆë‹¤");
-		System.out.println("ìˆ«ìëŠ” ë§ì§€ë§Œ ìœ„ì¹˜ê°€ ë§ì§€ ì•Šì„ ì‹œ 'ë³¼'");
-		System.out.println("ìˆ«ìì˜ ìœ„ì¹˜ê°€ ì˜³ë‹¤ë©´ 'ìŠ¤íŠ¸ë¼ì´í¬'");
-		System.out.println("ê°ê°ì˜ ë³¼ê³¼ ìŠ¤íŠ¸ë¼ì´í¬ëŠ” ìˆ«ìë¡œ í‘œì‹œë˜ë©°, ìˆ«ìê°€ ë³¼ /ìŠ¤íŠ¸ë¼ì´í¬ ëª¨ë‘ ì—†ì„ ì‹œ 'ì•„ì›ƒ'ì…ë‹ˆë‹¤");
+		System.out.println("³­ÀÌµµ´Â 'easy' 'normal' 'hard' ¸ğµå°¡ Á¸ÀçÇÏ¸ç");
+		System.out.println("EASY¿¡¼­´Â 20È¸, NORMAL¿¡¼­´Â 10È¸, HARD¿¡¼­´Â 5È¸ÀÇ ±âÈ¸°¡ ÁÖ¾îÁı´Ï´Ù");
+		System.out.println("¼ıÀÚ´Â 4°³¸¦ ¸ÂÃß½ÃµÇ Áßº¹Àº ¾øÀ¸¸ç 0¶ÇÇÑ Æ÷ÇÔÀÔ´Ï´Ù");
+		System.out.println("¼ıÀÚ´Â ¸ÂÁö¸¸ À§Ä¡°¡ ¸ÂÁö ¾ÊÀ» ½Ã 'º¼'");
+		System.out.println("¼ıÀÚÀÇ À§Ä¡°¡ ¿Ç´Ù¸é '½ºÆ®¶óÀÌÅ©'");
+		System.out.println("°¢°¢ÀÇ º¼°ú ½ºÆ®¶óÀÌÅ©´Â ¼ıÀÚ·Î Ç¥½ÃµÇ¸ç, ¼ıÀÚ°¡ º¼ /½ºÆ®¶óÀÌÅ© ¸ğµÎ ¾øÀ» ½Ã '¾Æ¿ô'ÀÔ´Ï´Ù");
 		System.out.println();
-		System.out.println("---ê²Œì„ ì‹œì‘ì— ì•ì„œ ì›í•˜ëŠ” ë‚œì´ë„ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”---");
+		System.out.println("---°ÔÀÓ ½ÃÀÛ¿¡ ¾Õ¼­ ¿øÇÏ´Â ³­ÀÌµµ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä---");
 		
 		System.out.print("MODE: ");
-		String difficult = (sc.next());
+		String difficult = sc.next(); // MODE¸¦ ÀÔ·Â ¹Ş±â À§ÇØ ÀÔ·Â
+		int chance = 0; // easy,normal,hard º°·Î ±âÈ¸°¡ ´Ù¸£±â ¶§¹®¿¡ int chance¸¦ ¼±¾ğÇØÁØ´Ù
+		boolean moded = true; //booleanÀº ±âº» Å¸ÀÔÁß¿¡¼­ ³í¸® Å¸ÀÔÀÎµ¥ true¸¦ ¼±¾ğÇÏ¸é switch¹® °¢ case¿¡¼­ Âü(true)°¡ ¼±ÅÃµÆÀ» °æ¿ì ½ÇÇàµÇ°Ô ÇØÁØ´Ù
+		switch(difficult) { // if³ª if - else ¹®À¸·Î ÇØµµ µÇÁö¸¸ booleanÀ» ¾²¸é¼­ if¹®º¸´Ù ÄÚµå ±æÀÌ¸¦ ÁÙÀÌ·Á¸é switch°¡ È¿°úÀûÀÌ¾î¼­ ¼±ÅÃ
+		case "easy" :
+			System.out.println("easy¸ğµå¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù. (±âÈ¸ 20¹ø)");
+			chance = 20;
+			break;
+		case "normal" :
+			System.out.println("normal¸ğµå¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù. (±âÈ¸ 10¹ø)");
+			chance = 10;
+			break;
+		case "hard" :
+			System.out.println("hard¸ğµå¸¦ ¼±ÅÃÇÏ¼Ì½À´Ï´Ù. (±âÈ¸ 5¹ø)");
+			chance = 5;
+			break;
+			default:
+				System.out.println("¿Ã¹Ù¸£Áö ¾ÊÀº ¸ğµå¸¦ ÀÔ·ÂÇß½À´Ï´Ù. ¾Ë¸ÂÀº ¸ğµå¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+				moded = false;
+				return; // Ã³À½ booleanÀº ¼±¾ğÇßÀ»¶§ 'boolean moded = true¸¦ ÂüÀ¸·Î ¼±¾ğÇÏ¿´´Âµ¥ ¸¸¾à switch¹®¿¡¼­ default±îÁö ³»·Á¿ÔÀ» °æ¿ì
+				// "MODE: "°¡ °ÅÁşÀÌ±â¿¡ ¿Ã¹Ù¸£Áö ¾Ê´Ù´Â ¸àÆ®¸¦ Ãâ·Â ÈÄ ¼Ò½º ÄÚµå ½ÇÇàÀ» default¿¡¼­ Á¤Áö½ÃÅ°±â À§ÇØ return »ç¿ë
+				/* ("returnÀº ³í¸® Å¸ÀÔÀÎ 'boolean'À» È°¿ëÇØ¼­ switch¹®À» ½èÀ» ¶§ °ÅÁş°ªÀÌ ³ª¿À¸é ½ÇÇàÇßÀ» ¶§ ÄÜ¼Ö¿¡¼­ ¾î¶»°Ô ÇÏ¸é ´ÙÀ½À¸·Î ¾È³Ñ¾î°¡°í
+				 * °Å±â¼­ ¸ØÃâ ¼ö ±Ã±İÇØ¼­ ÀÎÅÍ³İ¿¡¼­ °Ë»öÇÏ´Ù Ã£¾Æ¼­ È°¿ëÇÏ¿´½À´Ï´Ù") */}
 		
 		
 		
 		
 		
 		
+
+				
+	
+		System.out.println("-----ÀÔ·ÂÇÏ½Ã°íÀÚ ÇÏ´Â ¼ıÀÚ¸¦ ¼ø¼­´ë·Î ÀÔ·ÂÇØÁÖ¼¼¿ä-----");
 		
-		
-		System.out.println("-----ì…ë ¥í•˜ì‹œê³ ì í•˜ëŠ” ìˆ«ìë¥¼ ìˆœì„œëŒ€ë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”-----");
 		System.out.print("1) ");
-		double han1 = Double.parseDouble(sc.next());
+		int han1 = sc.nextInt();
 		System.out.print("2) ");
-		double han2 = Double.parseDouble(sc.next());
+		int han2 = sc.nextInt();
 		System.out.print("3) ");
-		double han3 = Double.parseDouble(sc.next());
+		int han3 = sc.nextInt();
 		System.out.print("4) ");
-		double han4 = Double.parseDouble(sc.next());
+		int han4 = sc.nextInt();
 		
-        Random r = new Random(); // ëœë¤ ìˆ«ì ë½‘ê¸° ìœ„í•œ ì…‹íŒ…
-		
-		// ì•¼êµ¬ê²Œì„ ìˆ«ì 4ê°œ (ì•„ì§ ì¤‘ë³µì œê±° ì—†ìŒ)
-		int numarr[] = new int[4]; // 4ì¹¸ì§œë¦¬ ë¹ˆ ë°°ì—´
+	
 		
 		for (int i = 0; i < 4; i++) {
-			numarr[i] = r.nextInt(0,9);
-			System.out.println("numarr[" + i + "] : " + numarr[i]);
+			ran[i] = r.nextInt(0,9);
+			System.out.println("ran[" + i + "] : " + ran[i]);
 		}
+		if (ran[0] == han1) {
+			System.out.println("Á¤´äÀÔ´Ï´Ù");
+		}else System.out.println("Æ²·È½À´Ï´Ù");
 		
 		
 		
