@@ -65,7 +65,7 @@ public class numberBaseballGame {
                flag = true;
                break;
             }
-         }
+         }//주석 테스트
 
          if (flag) {
             continue;
@@ -75,7 +75,7 @@ public class numberBaseballGame {
 
       }
 
-      int strike = 0;
+      int strike = 0; //스트라이크와 볼, 아웃을 카운팅하기 위해 스트라이크,볼,아웃을 int형으로 해서 0으로 선언
       int ball = 0;
       int out = 0;
       System.out.println("-----입력하시고자 하는 숫자를 순서대로 입력해주세요-----");
