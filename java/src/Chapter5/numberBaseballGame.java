@@ -65,7 +65,7 @@ public class numberBaseballGame {
                flag = true;
                break;
             }
-         }//주석 테스트
+         }//주석 테스트(2차)
 
          if (flag) {
             continue;
