@@ -148,7 +148,7 @@ public class numberBaseballGame {
       }
 
       if (strike != 4) {
-         System.out.println("탈락입니다.");//마지막 탈락 코멘트
+         System.out.println("탈락입니다.");
       }
 
    }
