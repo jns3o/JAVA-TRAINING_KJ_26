@@ -56,7 +56,7 @@ public class numberBaseballGame {
       while (i < 4) {
          ran[i] = r.nextInt(0, 9);
 
-        // System.out.println("ran[" + i + "] : " + ran[i]); // 컴퓨터가 자동 생성한 랜덤 숫자를 코멘트해주는 문장
+        System.out.println("ran[" + i + "] : " + ran[i]); // 컴퓨터가 자동 생성한 랜덤 숫자를 코멘트해주는 문장
          // 중복이 있는지 없는지 체크
          boolean flag = false;// 중복확인하는 변수다!
          for (int j = 0; j < i; j++) {
