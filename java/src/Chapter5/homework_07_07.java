@@ -28,7 +28,7 @@ public class homework_07_07 {
 		
 		for (int a = 0; a < 5; a++){
 			for (int b = 0; b < 5; b++) {
-				bingo1[a][b] 
+				//bingo1[a][b] 
 			}
 		}
 		

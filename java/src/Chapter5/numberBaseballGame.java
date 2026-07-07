@@ -163,7 +163,7 @@ public class numberBaseballGame {
 
       if (strike != 4) {
          System.out.println("탈락입니다."); //만약 기회를 다 썼을 경우 스트라이크가 4가 아닐 경우 탈락입니다 멘트를 출력
-      }//
+      }
 
    }
 }
