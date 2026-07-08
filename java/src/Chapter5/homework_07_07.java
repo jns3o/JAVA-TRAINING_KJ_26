@@ -23,7 +23,8 @@ public class homework_07_07 {
 		    }
 		    System.out.println(); 
 		}
-		System.out.println("2)");
+		///////////////////////////////////////////
+		System.out.println("2)-------");
 		/*2번 문제 (풀이 설명: 1번 문제와 원리 자체는 같지만 1은 우측으로 1씩 빼면서 밑으로 내려가는 식이었다면 2번문제는
 		 1부터 시작해서 우측으로 +2씩 해가며 내려가는 형식으로 코드를 구성 */
 		 
@@ -43,8 +44,8 @@ public class homework_07_07 {
 			}
 			System.out.println();
 		}
-		
-		System.out.println("3)");
+		////////////////////////////////////////////
+		System.out.println("3)-------");
 		/*3번 문제 (풀이 설명: 3번 문제는 1번 문제처럼 25부터 1씩 빼며 진행된다는 점은 같으나 가로로 진행하지 않고
 		 가로 첫째줄부터 세로로 내려가면서 진행된다*/
 
@@ -64,8 +65,8 @@ public class homework_07_07 {
 			}
 			System.out.println();
 		}
-		
-		System.out.println("4)");
+		////////////////////////////////////////////
+		System.out.println("4)-------");
 		//4번 문제 
 		/* 1,2번 문제와 동일한 경우이다. 4번 문제는 3번 문제와 진행방식은 같지만 세로열부터 진행되는 과정에서 25부터 시작하지 않고 1부터
 		 시작이 되는데 -1이 아닌 +1을 하며 지나가기 때문에 아래와 같은 코드를 작성 */
@@ -84,7 +85,45 @@ public class homework_07_07 {
 			}
 			System.out.println();
 		}
+		/////////////////////////////////////////////
 		//5번 문제
+		System.out.println("5)-------");
+		int [][]bingo4 = new int[5][5];
+				
+		int ga = 0;
+		int se = 0;
+		int ban = 0;
+		
+		for (int i = 1; i <= 25; i++) {
+			bingo4[ga][se] = i;
+
+		int t_ga = ga;
+		int t_se = se;
+			
+			
+		if (ban == 0) {t_se = se + 1;}
+		else if (ban == 1) {t_ga = ga + 1;}
+		else if (ban == 2) {t_se = se - 1;}
+		else if (ban == 3) {t_ga = ga - 1;}
+		
+		if (t_ga >= 5 || t_se >= 5 || t_ga < 0 || t_se < 0 || bingo4[t_ga][t_se] != 0) {
+			ban++;
+		if (ban == 4) {ban = 0;}
+		
+		if (ban == 0) {t_ga = ga; t_se = se + 1;}
+		else if (ban == 1) {t_ga = ga + 1; t_se = se;}
+		else if (ban == 2) {t_ga = ga; t_se = se - 1;}
+		else if (ban == 3) {t_ga = ga - 1; t_se = se;}
+		}
+		ga = t_ga;
+		se = t_se;	
+		}
+		for (int i = 0; i < 5; i++) {
+			for (int b = 0; b < 5; b++) {
+				System.out.printf(" %2d", bingo4[i][b]);
+			}
+			System.out.println();	
+		}
 		
 		
 		
@@ -106,5 +145,5 @@ public class homework_07_07 {
 		
 
 	}
-
 }
+
