@@ -78,16 +78,17 @@ public class BankProgram_homework {
 			}
 		}	
 		if (account.length() == 11) { 
-			int num = -1;
+			int num = -1; //만약 info가[99][0~3]까지 다 차버렸을경우에 사용자가 값을 하나 더 입력해버리면 인덱스가 초과되어버리기에 초과되면
+			// 프로그램이 꺼지게 만들기 위해 num = -1
 			for(int i = 0; i < array.length; i++) {
 				if(array[i][0] == null) {
 					num = i;
 					break;
 				}
 			}
-			array[num][0] = account;
-			array[num][1] = name;
-			array[num][2] = "0";
+			array[num][0] = account; //return을 쓰지 않고 info에 account와 name의 정보를 올리기 위해 createAccount메소드의 변환형은 없이
+			array[num][1] = name;	 //void로 만들고 array[num][0,1,2] = account / name / "0" ; 등으로 입력받게 해서 
+			array[num][2] = "0";	 //main 메소드에서 값을 바로 받아쓸 수 있게 하기 위해 입력
 			
 			
 			System.out.println("계좌번호: " + account + " / 예금주 명: " + name);
