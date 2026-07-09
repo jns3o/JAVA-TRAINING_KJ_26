@@ -18,7 +18,14 @@ class Student{
 }
 
 public class exam6_01 {
-
+	
+	String studentName;
+	
+	exam6_01() {}
+	exam6_01(String name) {
+		this.studentName = name;
+	}
+	
 	public static void main(String[] args) {
 		Student std1 = new Student("È«±æµ¿");
 		Student std2 = new Student("±è¸íÈñ");
@@ -34,6 +41,7 @@ public class exam6_01 {
 		
 	
 	}	
+	
 	
 
 }
