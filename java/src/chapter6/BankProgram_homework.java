@@ -17,24 +17,25 @@ public class BankProgram_homework {
 
 			switch (select) {
 			case "1":
-				System.out.println("계좌를 생성합니다\n");
+				System.out.println("\n계좌를 생성합니다\n");
 				createAccount(info);
 				break;
 			case "2":
-				System.out.println("계좌목록을 조회합니다\n");
+				System.out.println("\n계좌목록을 조회합니다\n");
 				AccList(info);
 				break;
 			case "3":
-				System.out.println("입금합니다\n");
+				System.out.println("\n입금합니다\n");
+				deposit(info);
 				break;
 			case "4":
-				System.out.println("출금합니다\n");
+				System.out.println("\n출금합니다\n");
 				break;
 			case "5":
-				System.out.println("잔액을 조회합니다\n");
+				System.out.println("\n잔액을 조회합니다\n");
 				break;
 			case "6":
-				System.out.println("프로그램을 종료합니다\n");
+				System.out.println("\n프로그램을 종료합니다\n");
 				return;
 
 			default:
@@ -47,12 +48,10 @@ public class BankProgram_homework {
 		}
 
 	}
-
 	static void printMsg() { // 은행 엄부 시스템과 각 목록에 알맞은 번호를 사용자에게 출력 하는 메소드
 		System.out.println(
 				">======은행 업무 시스템======<\n1. 계좌 생성\n2. 계좌 목록 조회\n3. 입금\n4. 출금\n5. 잔액조회\n6. 종료\n>========================<");
 	}
-
 	static void createAccount(String[][] array) { // 계좌목록을 생성하기 위해 계좌번호와 예금주 명을 입력받는 메소드
 		Scanner sc = new Scanner(System.in);
 		System.out.println(">=========계좌 생성=========<");
@@ -64,18 +63,16 @@ public class BankProgram_homework {
 		for (int i = 0; i < array.length; i++) {
 			if (array[i][0] != null) {
 				if (array[i][0].equals(account)) {
-					overLap = true; /*
-									 * if문 안 array[i][0].equals(account)는 첫 계좌를 생성하고 한 바퀴를 돌았을때 위에서 사용자가 account에
-									 * 원하는 계좌번호를 다시 입력하였는데 칸은 달라도 번호가 같아 버리면 (예: array[0][0] 하고 array[1][0]이 계좌번호
-									 * 11자리가 모두 동일할 경우 위에서 boolean의 변수명이였던 overLap이 false에서 true가 되면서 중복되는 계좌번호이기에
-									 * 다른 번호를 입력해주라는 문구를 출력
-									 */
-
-					if (overLap = true) {
+					overLap = true; 
+			 	/*if문 안 array[i][0].equals(account)는 첫 계좌를 생성하고 한 바퀴를 돌았을때 위에서 사용자가 account에
+			 	원하는 계좌번호를 다시 입력하였는데 칸은 달라도 번호가 같아 버리면 (예: array[0][0] 하고 array[1][0]이 계좌번호
+			 	11자리가 모두 동일할 경우 위에서 boolean의 변수명이였던 overLap이 false에서 true가 되면서 중복되는 계좌번호이기에
+ 				다른 번호를 입력해주라는 문구를 출력*/						 
+					if (overLap == true) {
 						System.out.println("입력하신 계좌번호는 중복되는 번호입니다. 다른 번호를 입력해주세요\n");
 					}
 					 createAccount(array);// 중복이 발생하였을 경우 뒤로 되돌아가서 값을 재입력하기 위해 return;을 사용
-
+					 return;
 				}
 			}
 		}
@@ -90,61 +87,74 @@ public class BankProgram_homework {
 			}
 			System.out.print("-예금주 명 : ");
 			String name = sc.nextLine();
+			System.out.print("\n-최초 계좌 개설 시 초기 금액 입금이 필요합니다\n 입금하고자 하는 금액을 입력해주세요 : ");
+			String money = sc.nextLine();
+			System.out.println();
+			try {
+				int Firmoney = Integer.parseInt(money);
+				if (money.length() != String.valueOf(Firmoney).length()) {
+					System.out.println(" [!]금액의 첫 번째 자리에는 0이 올 수 없습니다\n" + " 다시 입력해주시기 바랍니다\n");
+					createAccount(array);
+					return;
+				}
+			} catch (Exception e) {
+				System.out.println(" 입금액은 숫자만 입력가능합니다\n" + " 다시 입력해주세요\n");
+				createAccount(array);
+				return;
+			}
+			if (Integer.parseInt(money) == 0) {
+				System.out.println(" 초기 금액은 0원으로 할 수 없습니다\n" + " 다시 입력해주세요\n");
+				createAccount(array);
+				return;
+			}	
+			System.out.print(money + "원 입금확인되었습니다");
 			if (name.length() <= 6) {
 			System.out.println("\n>=========================<");
 			System.out.println();
 			}else {
-				System.out.println("예금주 명은 6자까지 입력가능합니다, 다시 입력해주세요");
+				System.out.println("[!]예금주 명은 6자까지 입력가능합니다, 다시 입력해주세요\n");
 				createAccount(array);
 				return;
-			}
-			
-			
-			
+			}	
 			array[num][0] = account; // return을 쓰지 않고 info에 account와 name의 정보를 올리기 위해 createAccount메소드의 변환형은 없이
 			array[num][1] = name; // void로 만들고 array[num][0,1,2] = account / name / "0" ; 등으로 입력받게 해서
-			array[num][2] = "0"; // main 메소드에서 값을 바로 받아쓸 수 있게 하기 위해 입력
+			array[num][2] = money; // main 메소드에서 값을 바로 받아쓸 수 있게 하기 위해 입력
 
-			System.out.println("계좌번호: " + account + " | 예금주 명: " + name);
+			System.out.println("계좌번호: " + account + " | 예금주 명: " + name + " | 계좌 잔액: " + money + "\n" );
 			System.out.println("으로 저장되었습니다");
 			System.out.println();
 
 			} else {
 			System.out.println("입력된 계좌번호는 " + account.length() + " 자리입니다. 양식에 맞게 다시 입력해주세요\n");
 			createAccount(array);
-			
+			return;
 		}
-		
-
 	}
-
 	static void AccList(String[][] array) { // AccList [AccountList] => 입력된 계좌 목록을 보여주기 위한 메소드
 		Scanner sc = new Scanner(System.in);
 		boolean say = true;//논리 타입인 boolean을 true로 먼저 선언을 해줘서 for문안에서 for가 false일 경우 실행되게 하기 위해 선언
 		System.out.println(">=====현재 입력된 계좌 목록=====<\n");
-		System.out.println("계좌번호\t\t예금주 명\t\t계좌잔액");
+		System.out.println("계좌번호\t\t예금주 명\t\t계좌잔액\n");
 		for (int i = 0; i < array.length; i++) {// 세로칸 기준 아래로 내려가면서 각 계좌의 3가지 정보를 보여주기 위해 설정		
 			if (array[i][0] != null) { // 입력된 계좌 목록 중에 아무것도 입력되지 칸들을 전부 null(없음)이라 했을 때 null이 아닐 경우에만 목록이 출력되도록 설정
 				say = false;
-				System.out.println(array[i][0] + "\t\t" + array[i][1] + "\t\t" + array[i][2]);
-				
-				
+				System.out.println(array[i][0] + "\t\t" + array[i][1] + "\t\t" + array[i][2] + "원" + "\n");	
 			}
-			
 		}if(say == true) {//처음 boolean을 true로 선언하고 for문 안에서 false로 실행되게 했을때 
 			//if(say == true)는 "만약 boolean say가 true(참)일 경우 밑에 문장 출력되게 하기 위해 입력
 			//세미콜론(;)으로 하게 되면 if(say==true)에서 끝나버리기 때문에 중괄호로 묶음
-		System.out.println("현재 입력된 계좌가 없습니다\n");//
+		System.out.println("현재 입력된 계좌가 없습니다\n");
 		}
+	}
+	static void deposit(String[][] array) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(">===========입금===========<");
 		
-
 	}
+	
+	
 
-	}
-
-
-
-
+	
 
 
 
@@ -154,6 +164,10 @@ public class BankProgram_homework {
 
 
 
+
+
+
+}
 
 
 
