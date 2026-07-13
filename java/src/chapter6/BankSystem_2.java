@@ -3,8 +3,8 @@ package chapter6;
 import java.lang.reflect.Array;
 import java.util.Scanner;
 
-public class BankSystem_01 {
-//
+public class BankSystem_2 {
+//test
 	public static void main(String[] array) {
 		Scanner sc = new Scanner(System.in); // 값을 입력받기 위해 scanner를 사용
 		String[][] info = new String[100][3]; // 조건 2번 힌트,//정보담을 변수
@@ -357,7 +357,6 @@ public class BankSystem_01 {
 
 	}
 	}
-//test1
 
 //	static void AccList(String[][] array) { // AccList [AccountList] => 입력된 계좌 목록을 보여주기 위한 메소드
 //		Scanner sc = new Scanner(System.in);
