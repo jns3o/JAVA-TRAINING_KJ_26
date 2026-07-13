@@ -4,7 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class BankSystem_2 {
-//test
+//test1
 	public static void main(String[] array) {
 		Scanner sc = new Scanner(System.in); // 값을 입력받기 위해 scanner를 사용
 		String[][] info = new String[100][3]; // 조건 2번 힌트,//정보담을 변수
