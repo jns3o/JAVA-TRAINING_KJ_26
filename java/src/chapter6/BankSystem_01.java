@@ -58,11 +58,18 @@ public class BankSystem_01 {
 
 	static void createAccount(String[][] array) { // 계좌목록을 생성하기 위해 계좌번호와 예금주 명을 입력받는 메소드
 		Scanner sc = new Scanner(System.in);
+		System.out.println(">=========계좌 생성=========<");
 		while (true) {
-			System.out.println(">=========계좌 생성=========<");
 			System.out.println("계좌를 생성하기 위해 원하시는 계좌 번호 6자리와 예금주 명을 입력하시오(번호만 입력)");
 			System.out.print("\n-계좌번호 : ");
 			String account = sc.nextLine();
+			try {
+				Integer.parseInt(account);
+			} catch (Exception e) {
+				System.out.println("[!] 잘못된 입력이 감지되었습니다. 계좌번호에는 숫자만 입력가능합니다. 재입력 바랍니다");
+				continue;
+				
+			}
 
 			boolean overLap = false; // boolean을 false로 선언하면서 중복확인 전 중복이 없다고 선언
 			for (int i = 0; i < array.length; i++) {
@@ -212,7 +219,7 @@ public class BankSystem_01 {
 			}
 			if (check == false) {
 				System.out.println("현재 일치하는 계좌가 없습니다 \n");
-				System.out.println("처음으로 되돌아가시려면 1, 입금화면으로 돌아가시려면 2 또는 아무 키나 입력해주세요 : ");
+				System.out.println("처음으로 되돌아가시려면 1, 입금화면으로 돌아가시려면 2 또는 아무 키나 입력해주세요 : \n");
 				String back = sc.nextLine();
 				if ("1".equals(back)) {
 					return;
@@ -284,7 +291,7 @@ public class BankSystem_01 {
 			}
 			if (check == false) {
 				System.out.println("현재 일치하는 계좌가 없습니다 \n");
-				System.out.println("처음으로 되돌아가시려면 1, 출금화면으로 돌아가시려면 2 또는 아무 키나 입력해주세요 : ");
+				System.out.println("처음으로 되돌아가시려면 1, 출금화면으로 돌아가시려면 2 또는 아무 키나 입력해주세요 : \n");
 				String back = sc.nextLine();
 				if ("1".equals(back)) {
 					return;
@@ -334,7 +341,7 @@ public class BankSystem_01 {
 			continue;
 		}if (a == false) {
 			System.out.println("현재 일치하는 계좌가 없습니다\n");
-			System.out.print("처음으로 되돌아가시려면 1, 잔액 조회 화면으로 되돌아가시려면 2 또는 아무 키나 입력해주세요 : ");
+			System.out.print("처음으로 되돌아가시려면 1, 잔액 조회 화면으로 되돌아가시려면 2 또는 아무 키나 입력해주세요 : \n");
 			String back = sc.nextLine();
 			if ("1".equals(back)) {
 				return;
