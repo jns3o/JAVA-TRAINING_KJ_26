@@ -21,51 +21,76 @@ public class RemoteControll_Example {
 		
 		switch(selectMenu) {
 		case "1":
-			System.out.println("TV를 켜시겠습니까? 예: 1, 아니오: 2");
+			System.out.println("TV를 조작하려면 1번, 전원을 끄려면 2번을 눌러주세요");
 			System.out.print(": ");
 			String turn = sc.nextLine();
 			if ("1".equals(turn)) {
 				tv_RemoteControll.powerOn();
-				break;
+				System.out.println("채널을 조작하려면 1번, 볼륨 조절을 하시려면 2번을 눌러주세요");
+				String chnnaleVolum = sc.nextLine();
+				
+				if("1".equals(chnnaleVolum)) {
+					tv_RemoteControll.channel();
+				}else if("2".equals(chnnaleVolum)) {
+					tv_RemoteControll.volume();
+				}else {
+					System.out.println("[!]잘못된 값을 입력하셨습니다. 처음으로 되돌아갑니다");
+					continue;
+				}		
 			}else if ("2".equals(turn)) {
 				tv_RemoteControll.powerOff();
-				break;
 			}else {
 				System.out.println("[!] 잘못된 입력 감지. 다시 선택해주세요");
 				continue;
-			}
+			}continue;
 			
 			
 		case "2":
-			System.out.println("에어컨을 작동하시겠습니까? 예: 1 , 아니오: 2");
+			System.out.println("에어컨을 조작하려면 1번, 전원을 끄려면 2번, 온도를 올리시려면 3번, 온도를 내리시려면 4번을 눌러주세요 : ");
 			System.out.print(": ");
 			String choiceNum = sc.nextLine();
 			if ("1".equals(choiceNum)) {
-				airCon_RemoteControll.powerOn();
-				break;
+				airCon_RemoteControll.powerOn();	
 			}else if ("2".equals(choiceNum)) {
 				airCon_RemoteControll.powerOff();
-				break;
+			}else if ("3".equals(choiceNum)){
+				if (airCon_RemoteControll.powerOn2()) {
+		            airCon_RemoteControll.airTempeatureUp();
+			}else {
+					System.out.println("전원이 꺼져있어 작동할 수 없습니다");
+				}
+			}else if ("4".equals(choiceNum)){
+				airCon_RemoteControll.airTempeatureDown();
 			}else {
 				System.out.println("[!] 잘못된 입력 감지. 다시 선택해주세요");
 				continue;
-			}
+			}continue;
 		case "3":
-			System.out.println("전등을 키시겠습니까? 예: 1, 아니오: 2");
+			System.out.println("전등을 조작하려면 1번, 전등을 끄려면 2번을 선택해주세요");
 			System.out.print(": ");
 			String turnOnLed = sc.nextLine();
 			if ("1".equals(turnOnLed)) {
 				light_RemoteControll.powerOn();
-				break;
+				System.out.print("전등의 밝기를 올리시려면 '+'를, 내리시려면 '-'를 입력해주세요 : ");
+				String UpDown = sc.nextLine();
+				
+				if("+".equals(UpDown)) {
+					light_RemoteControll.lightUp();
+				}else if("-".equals(UpDown)) {
+					light_RemoteControll.lightDown();
+				}else {
+					System.out.println("[!] 잘못된 값을 입력하셨습니다 . 처음으로 되돌아갑니다");
+					continue;
+				}
 			}else if ("2".equals(turnOnLed)) {
 				light_RemoteControll.powerOff();
-				break;
+				
 			}else {
 				System.out.println("[!] 잘못된 입력 감지. 다시 선택해주세요");
 				continue;
-			}
+			}continue;
 		case "0":
-			System.out.println("시스템을 종료합니다...");
+			System.out.println("[!]시스템을 종료합니다...");
 			return;
 			
 			
