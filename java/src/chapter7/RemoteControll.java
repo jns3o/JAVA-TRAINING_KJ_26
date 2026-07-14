@@ -16,3 +16,4 @@ public abstract class RemoteControll {
 	abstract void powerOn();	
 	abstract void powerOff();
 	}
+//
