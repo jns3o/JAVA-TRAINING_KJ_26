@@ -10,39 +10,39 @@ public class AirCon_RemoteControll extends RemoteControll {
 	@Override
 	public void powerOn() {
 		if(!power) {
-			System.out.println("\n¿¡¾îÄÁ Àü¿øÀ» ÄÕ´Ï´Ù");
-			System.out.println("ÇöÀç ¼³Á¤µÇ¾îÀÖ´Â ¿Âµµ´Â " + tempeature + " µµ ÀÔ´Ï´Ù.\n[¼³Á¤ °¡´É ¿Âµµ: ¿µ»ó 18~30µµ]\n");
+			System.out.println("\nì—ì–´ì»¨ ì „ì›ì„ ì¼­ë‹ˆë‹¤");
+			System.out.println("í˜„ì¬ ì„¤ì •ë˜ì–´ìˆëŠ” ì˜¨ë„ëŠ” " + tempeature + " ë„ ì…ë‹ˆë‹¤.\n[ì„¤ì • ê°€ëŠ¥ ì˜¨ë„: ì˜ìƒ 18~30ë„]\n");
 			power = true;
 		}else {
-			System.out.println("\n¿¡¾îÄÁÀÌ ÀÌ¹Ì ÄÑÁ®ÀÖ½À´Ï´Ù");
-			System.out.println("ÇöÀç ¼³Á¤µÇ¾îÀÖ´Â ¿Âµµ´Â " + tempeature + " µµ ÀÔ´Ï´Ù.\n[¼³Á¤ °¡´É ¿Âµµ: ¿µ»ó 18~30µµ]\n");
+			System.out.println("\nì—ì–´ì»¨ì´ ì´ë¯¸ ì¼œì ¸ìˆìŠµë‹ˆë‹¤");
+			System.out.println("í˜„ì¬ ì„¤ì •ë˜ì–´ìˆëŠ” ì˜¨ë„ëŠ” " + tempeature + " ë„ ì…ë‹ˆë‹¤.\n[ì„¤ì • ê°€ëŠ¥ ì˜¨ë„: ì˜ìƒ 18~30ë„]\n");
 			
 		}		
 	} 
 		
 	void airTempeatureUp() {		
 		while (true) {
-				System.out.println("\nÈñ¸Á ¿Âµµ·Î ¼³Á¤ Áß...");
+				System.out.println("\ní¬ë§ ì˜¨ë„ë¡œ ì„¤ì • ì¤‘...");
 				tempeature += 1;
 				if (tempeature > 30) {
-					System.out.println("[!]°æ°í, ¼³Á¤ ¿Âµµ´Â 30µµ¸¦ ³Ñ±æ ¼ö ¾ø½À´Ï´Ù. ¸Ş´º·Î µÇµ¹¾Æ°©´Ï´Ù");
+					System.out.println("[!]ê²½ê³ , ì„¤ì • ì˜¨ë„ëŠ” 30ë„ë¥¼ ë„˜ê¸¸ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë©”ë‰´ë¡œ ë˜ëŒì•„ê°‘ë‹ˆë‹¤");
 					tempeature -= 1;
 					return;
 				}
-				System.out.println(tempeature + " µµ·Î ¼³Á¤µÇ¾ú½À´Ï´Ù\n");
+				System.out.println(tempeature + " ë„ë¡œ ì„¤ì •ë˜ì—ˆìŠµë‹ˆë‹¤\n");
 				return;
 			} 
 	}
 	void airTempeatureDown() {
 		while (true) {
-			System.out.println("\nÈñ¸Á ¿Âµµ·Î ¼³Á¤ Áß...");
+			System.out.println("\ní¬ë§ ì˜¨ë„ë¡œ ì„¤ì • ì¤‘...");
 			tempeature -= 1;
 			if (tempeature < 18) {
-				System.out.println("[!]°æ°í, ¼³Á¤ ¿Âµµ´Â 18µµ ÀÌÇÏ·Î ¼³Á¤ ºÒ°¡´É ÇÕ´Ï´Ù. ¸Ş´º·Î µÇµ¹¾Æ°©´Ï´Ù");
+				System.out.println("[!]ê²½ê³ , ì„¤ì • ì˜¨ë„ëŠ” 18ë„ ì´í•˜ë¡œ ì„¤ì • ë¶ˆê°€ëŠ¥ í•©ë‹ˆë‹¤. ë©”ë‰´ë¡œ ë˜ëŒì•„ê°‘ë‹ˆë‹¤");
 				tempeature += 1;
 				return;
 			}
-			System.out.println(tempeature + " µµ·Î ¼³Á¤µÇ¾ú½À´Ï´Ù\n");
+			System.out.println(tempeature + " ë„ë¡œ ì„¤ì •ë˜ì—ˆìŠµë‹ˆë‹¤\n");
 			return;
 		}
 
@@ -50,7 +50,7 @@ public class AirCon_RemoteControll extends RemoteControll {
 	@Override
 	public void powerOff() {
 		this.power = false;
-		System.out.println("¿¡¾îÄÁÀÇ Àü¿øÀ» Á¾·áÇÕ´Ï´Ù...");
+		System.out.println("ì—ì–´ì»¨ì˜ ì „ì›ì„ ì¢…ë£Œí•©ë‹ˆë‹¤...");
 		return;
 	}
 }

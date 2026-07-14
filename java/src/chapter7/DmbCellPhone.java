@@ -11,18 +11,18 @@ public class DmbCellPhone extends CellPhone{
 	}
 	@Override
 	void powerOn() {
-		System.out.println("DMBÆùÀÌ ÄÑÁ³½À´Ï´Ù.");
+		System.out.println("DMBí°ì´ ì¼œì¡ŒìŠµë‹ˆë‹¤.");
 	}
 	
 	void turnOnDmb() {
-		System.out.println("Ã¤³Î" + channel + "¹ø DMB ¹æ¼Û ¼ö½ÅÀ» ½ÃÀÛÇÕ´Ï´Ù.");
+		System.out.println("ì±„ë„" + channel + "ë²ˆ DMB ë°©ì†¡ ìˆ˜ì‹ ì„ ì‹œì‘í•©ë‹ˆë‹¤.");
 	}
 	void changeChannelDmb(int channel) {
 		this.channel = channel;
-		System.out.println("Ã¤³Î" + channel + "¹øÀ¸·Î ¹Ù²ß´Ï´Ù.");
+		System.out.println("ì±„ë„" + channel + "ë²ˆìœ¼ë¡œ ë°”ê¿‰ë‹ˆë‹¤.");
 	}
 	void turnOffDmb() {
-		System.out.println("DMB ¹æ¼Û ¼ö½ÅÀ» ¸ØÃä´Ï´Ù");
+		System.out.println("DMB ë°©ì†¡ ìˆ˜ì‹ ì„ ë©ˆì¶¥ë‹ˆë‹¤");
 	}
 	
 }

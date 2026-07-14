@@ -5,10 +5,10 @@ import java.util.Scanner;
 public abstract class RemoteControll {
 	
 	boolean power = false;
-	boolean powerOn2() { /*ºÎ¸ğ Å¬·¡½ºÀÎ RemoteControll¿¡¼­ ÀÚ½Ä Å¬·¡½º¿¡¼­ ¾µ ¼ö ÀÖ°Ô boolean power = false;
-	·Î ¹Ì¸® ¼±¾ğÀ» ÇØ³õ¾Ò´Âµ¥ ¸ŞÀÎ ¸Ş¼Òµå¿¡¼­ °¢ ÀÚ½Ä Å¬·¡½ºµéÀÌ boolean powerÀÇ °ªÀÌ trueÀÎÁö º¼ ¼ö ÀÖÀ¸·Á¸é
-	ºÎ¸ğ Å¬·¡½º¿¡¼­ boolean powerOn2¶ó´Â º¯¼ö¸¦ ¶Ç ¼±¾ğÇØÁÖ°í Áß°ıÈ£´Â Ä£ µÚ ±× ¾È¿¡ return this.power Áï,
-	power¶ó´Â º¯¼ö¸¦ ÁöÁ¤ÇÏ±â À§ÇØ this. À» ¾²°í ÀÌ°É ¸ŞÀÎ ¸Ş¼Òµå¿¡¼­ ¾µ ¼ö ÀÖ°Ô '¹İÈ¯'ÇÏ±â À§ÇØ returnÀ» »ç¿ë*/
+	boolean powerOn2() { /*ë¶€ëª¨ í´ë˜ìŠ¤ì¸ RemoteControllì—ì„œ ìì‹ í´ë˜ìŠ¤ì—ì„œ ì“¸ ìˆ˜ ìˆê²Œ boolean power = false;
+	ë¡œ ë¯¸ë¦¬ ì„ ì–¸ì„ í•´ë†“ì•˜ëŠ”ë° ë©”ì¸ ë©”ì†Œë“œì—ì„œ ê° ìì‹ í´ë˜ìŠ¤ë“¤ì´ boolean powerì˜ ê°’ì´ trueì¸ì§€ ë³¼ ìˆ˜ ìˆìœ¼ë ¤ë©´
+	ë¶€ëª¨ í´ë˜ìŠ¤ì—ì„œ boolean powerOn2ë¼ëŠ” ë³€ìˆ˜ë¥¼ ë˜ ì„ ì–¸í•´ì£¼ê³  ì¤‘ê´„í˜¸ëŠ” ì¹œ ë’¤ ê·¸ ì•ˆì— return this.power ì¦‰,
+	powerë¼ëŠ” ë³€ìˆ˜ë¥¼ ì§€ì •í•˜ê¸° ìœ„í•´ this. ì„ ì“°ê³  ì´ê±¸ ë©”ì¸ ë©”ì†Œë“œì—ì„œ ì“¸ ìˆ˜ ìˆê²Œ 'ë°˜í™˜'í•˜ê¸° ìœ„í•´ returnì„ ì‚¬ìš©*/
 		return this.power;
 	}
 	Scanner sc = new Scanner(System.in);

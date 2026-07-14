@@ -12,16 +12,16 @@ public class RemoteControll_Example {
 		while(true) {
 		System.out.println("======KJ R.Controll======");
 		System.out.println("1. TV");
-		System.out.println("2. ¿¡¾îÄÁ ¸®¸ğÄÜ");
-		System.out.println("3. Àüµî ¸®¸ğÄÜ");
-		System.out.println("0. Á¾·á");
+		System.out.println("2. ì—ì–´ì»¨ ë¦¬ëª¨ì½˜");
+		System.out.println("3. ì „ë“± ë¦¬ëª¨ì½˜");
+		System.out.println("0. ì¢…ë£Œ");
 		System.out.println("=========================");
-		System.out.print("¸Ş´º ¼±ÅÃ : ");
+		System.out.print("ë©”ë‰´ ì„ íƒ : ");
 		String selectMenu = sc.nextLine();
 		
 		switch(selectMenu) {
 		case "1":
-			System.out.println("TV¸¦ Å°·Á¸é 1¹ø, Àü¿øÀ» ²ô·Á¸é 2¹ø, Ã¤³Î Á¶ÀÛÀº 3¹ø, º¼·ı Á¶ÀıÀº 4¹øÀ» ´­·¯ÁÖ¼¼¿ä");
+			System.out.println("TVë¥¼ í‚¤ë ¤ë©´ 1ë²ˆ, ì „ì›ì„ ë„ë ¤ë©´ 2ë²ˆ, ì±„ë„ ì¡°ì‘ì€ 3ë²ˆ, ë³¼ë¥¨ ì¡°ì ˆì€ 4ë²ˆì„ ëˆŒëŸ¬ì£¼ì„¸ìš”");
 			System.out.print(": ");
 			String turn = sc.nextLine();
 			if ("1".equals(turn)) {
@@ -29,26 +29,26 @@ public class RemoteControll_Example {
 			}else if ("2".equals(turn)) {
 				tv_RemoteControll.powerOff();			
 			}else if ("3".equals(turn)) {
-				if(tv_RemoteControll.powerOn2()) {//powerOn2´Â powerOnÀÌ¶ó´Â º¯¼ö°ªÀ» ¹İÈ¯¹Ş±â À§ÇØ ¼±¾ğÇØ³õÀº º¯¼ö
-					tv_RemoteControll.channel();//Áï, powerOn2 => tv¸®¸ğÄÁ Å¬·¡½º¿¡¼­ powerÀÇ °ªÀÌ true¸é channelÀ» ºÒ·¯¿Àµµ·Ï ÇÏ±â À§ÇÔ
-				}else {								//´Ù¸¥ caseµéµµ µ¿ÀÏ ÀÇ¹Ì
-					System.out.println("\nÀü¿øÀÌ ²¨Á®ÀÖ¾î ÀÛµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù\n");
+				if(tv_RemoteControll.powerOn2()) {//powerOn2ëŠ” powerOnì´ë¼ëŠ” ë³€ìˆ˜ê°’ì„ ë°˜í™˜ë°›ê¸° ìœ„í•´ ì„ ì–¸í•´ë†“ì€ ë³€ìˆ˜
+					tv_RemoteControll.channel();//ì¦‰, powerOn2 => tvë¦¬ëª¨ì»¨ í´ë˜ìŠ¤ì—ì„œ powerì˜ ê°’ì´ trueë©´ channelì„ ë¶ˆëŸ¬ì˜¤ë„ë¡ í•˜ê¸° ìœ„í•¨
+				}else {								//ë‹¤ë¥¸ caseë“¤ë„ ë™ì¼ ì˜ë¯¸
+					System.out.println("\nì „ì›ì´ êº¼ì ¸ìˆì–´ ì‘ë™í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤\n");
 				}				
 			}else if ("4".equals(turn)) {
 				if(tv_RemoteControll.powerOn2()) {
 					tv_RemoteControll.volume();
 				}else {
-					System.out.println("\nÀü¿øÀÌ ²¨Á®ÀÖ¾î ÀÛµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù.\n");
+					System.out.println("\nì „ì›ì´ êº¼ì ¸ìˆì–´ ì‘ë™í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
 				}
 				
 			}else {
-				System.out.println("[!] Àß¸øµÈ ÀÔ·Â °¨Áö. ´Ù½Ã ¼±ÅÃÇØÁÖ¼¼¿ä");
+				System.out.println("[!] ì˜ëª»ëœ ì…ë ¥ ê°ì§€. ë‹¤ì‹œ ì„ íƒí•´ì£¼ì„¸ìš”");
 				continue;
 			}continue;
 			
 			
 		case "2":
-			System.out.println("¿¡¾îÄÁÀÇ Àü¿øÀº Å°·Á¸é 1¹ø, Àü¿øÀ» ²ô·Á¸é 2¹ø, ¿Âµµ¸¦ ¿Ã¸®½Ã·Á¸é 3¹ø, ¿Âµµ¸¦ ³»¸®½Ã·Á¸é 4¹øÀ» ´­·¯ÁÖ¼¼¿ä : ");
+			System.out.println("ì—ì–´ì»¨ì˜ ì „ì›ì€ í‚¤ë ¤ë©´ 1ë²ˆ, ì „ì›ì„ ë„ë ¤ë©´ 2ë²ˆ, ì˜¨ë„ë¥¼ ì˜¬ë¦¬ì‹œë ¤ë©´ 3ë²ˆ, ì˜¨ë„ë¥¼ ë‚´ë¦¬ì‹œë ¤ë©´ 4ë²ˆì„ ëˆŒëŸ¬ì£¼ì„¸ìš” : ");
 			System.out.print(": ");
 			String choiceNum = sc.nextLine();
 			if ("1".equals(choiceNum)) {
@@ -59,20 +59,20 @@ public class RemoteControll_Example {
 				if (airCon_RemoteControll.powerOn2()) {
 		            airCon_RemoteControll.airTempeatureUp();
 			}else {
-					System.out.println("\nÀü¿øÀÌ ²¨Á®ÀÖ¾î ÀÛµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù\n");
+					System.out.println("\nì „ì›ì´ êº¼ì ¸ìˆì–´ ì‘ë™í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤\n");
 				}
 			}else if ("4".equals(choiceNum)){
 				if (airCon_RemoteControll.powerOn2()) {
 					airCon_RemoteControll.airTempeatureDown();
 				}else {
-					System.out.println("\nÀü¿øÀÌ ²¨Á®ÀÖ¾î ÀÛµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù\n");
+					System.out.println("\nì „ì›ì´ êº¼ì ¸ìˆì–´ ì‘ë™í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤\n");
 				}			
 			}else {
-				System.out.println("[!] Àß¸øµÈ ÀÔ·Â °¨Áö. ´Ù½Ã ¼±ÅÃÇØÁÖ¼¼¿ä");
+				System.out.println("[!] ì˜ëª»ëœ ì…ë ¥ ê°ì§€. ë‹¤ì‹œ ì„ íƒí•´ì£¼ì„¸ìš”");
 				continue;
 			}continue;
 		case "3":
-			System.out.println("ÀüµîÀ» Á¶ÀÛÇÏ·Á¸é 1¹ø, ÀüµîÀ» ²ô·Á¸é 2¹ø, ¹à±â¸¦ ¿Ã¸®½Ã·Á¸é 3¹ø, ¹à±â¸¦ ³»¸®½Ã·Á¸é 4¹øÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			System.out.println("ì „ë“±ì„ ì¡°ì‘í•˜ë ¤ë©´ 1ë²ˆ, ì „ë“±ì„ ë„ë ¤ë©´ 2ë²ˆ, ë°ê¸°ë¥¼ ì˜¬ë¦¬ì‹œë ¤ë©´ 3ë²ˆ, ë°ê¸°ë¥¼ ë‚´ë¦¬ì‹œë ¤ë©´ 4ë²ˆì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 			System.out.print(": ");
 			String turnOnLed = sc.nextLine();
 			if ("1".equals(turnOnLed)) {
@@ -83,23 +83,25 @@ public class RemoteControll_Example {
 				if (light_RemoteControll.powerOn2()) {
 					light_RemoteControll.lightUp();	
 				}else {
-					System.out.println("\nÀü¿øÀÌ ²¨Á®ÀÖ¾î ÀÛµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù\n");
+					System.out.println("\nì „ì›ì´ êº¼ì ¸ìˆì–´ ì‘ë™í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤\n");
 				}
 			}else if ("4".equals(turnOnLed)) {
 				if (light_RemoteControll.powerOn2()) {
 					light_RemoteControll.lightDown();				
 				}else {
-					System.out.println("\nÀü¿øÀÌ ²¨Á®ÀÖ¾î ÀÛµ¿ÇÒ ¼ö ¾ø½À´Ï´Ù\n");
+					System.out.println("\nì „ì›ì´ êº¼ì ¸ìˆì–´ ì‘ë™í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤\n");
 				}
 			}else {
-				System.out.println("[!] Àß¸øµÈ ÀÔ·Â °¨Áö. ´Ù½Ã ¼±ÅÃÇØÁÖ¼¼¿ä");
+				System.out.println("[!] ì˜ëª»ëœ ì…ë ¥ ê°ì§€. ë‹¤ì‹œ ì„ íƒí•´ì£¼ì„¸ìš”");
 				continue;
 			}continue;
 		case "0":
-			System.out.println("[!]½Ã½ºÅÛÀ» Á¾·áÇÕ´Ï´Ù...");
+			System.out.println("[!]ì‹œìŠ¤í…œì„ ì¢…ë£Œí•©ë‹ˆë‹¤...");
 			return;
+		default:
+			System.out.println("[!]ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ì¬ì…ë ¥ ë°”ëë‹ˆë‹¤");
+			continue;
 			
-			//
 			
 		}
 		

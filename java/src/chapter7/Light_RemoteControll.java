@@ -9,37 +9,37 @@ public class Light_RemoteControll extends RemoteControll{
 	@Override
 	public void powerOn() {
 		if(!power) {
-			System.out.println("\nÀüµîÀ» ÀÛµ¿ÇÕ´Ï´Ù...");
-			System.out.println("ÇöÀç ¼³Á¤µÈ ÀüµîÀÇ ¹à±â´Â " + led + " ÀÔ´Ï´Ù.[¼³Á¤ °¡´É ¹à±â: 0~40]\n");
+			System.out.println("\nì „ë“±ì„ ì‘ë™í•©ë‹ˆë‹¤...");
+			System.out.println("í˜„ì¬ ì„¤ì •ëœ ì „ë“±ì˜ ë°ê¸°ëŠ” " + led + " ì…ë‹ˆë‹¤.[ì„¤ì • ê°€ëŠ¥ ë°ê¸°: 0~40]\n");
 			power = true;
 		}else {
-			System.out.println("\nÀüµîÀÌ ÀÌ¹Ì ÄÑÁ®ÀÖ½À´Ï´Ù");
-			System.out.println("ÇöÀç ¼³Á¤µÈ ÀüµîÀÇ ¹à±â´Â " + led + " ÀÔ´Ï´Ù.[¼³Á¤ °¡´É ¹à±â: 0~40]\n");
+			System.out.println("\nì „ë“±ì´ ì´ë¯¸ ì¼œì ¸ìˆìŠµë‹ˆë‹¤");
+			System.out.println("í˜„ì¬ ì„¤ì •ëœ ì „ë“±ì˜ ë°ê¸°ëŠ” " + led + " ì…ë‹ˆë‹¤.[ì„¤ì • ê°€ëŠ¥ ë°ê¸°: 0~40]\n");
 		}
 	}	
 		void lightUp() {	
 		while (true) {
-				System.out.println("\n¼³Á¤ ¹à±â·Î ¿Ã¸®´Â Áß...");
+				System.out.println("\nì„¤ì • ë°ê¸°ë¡œ ì˜¬ë¦¬ëŠ” ì¤‘...");
 				led += 1;
 				if (led > 40) {
-					System.out.println("[!]°æ°í, ¹à±â´Â 40À» ³Ñ±æ ¼ö ¾ø½À´Ï´Ù. ¸Ş´º·Î µÇµ¹¾Æ°©´Ï´Ù");
+					System.out.println("[!]ê²½ê³ , ë°ê¸°ëŠ” 40ì„ ë„˜ê¸¸ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë©”ë‰´ë¡œ ë˜ëŒì•„ê°‘ë‹ˆë‹¤");
 					led -= 1;
 					return;
 				}
-				System.out.println(led + " ¹à±â·Î ¼³Á¤µÇ¾ú½À´Ï´Ù\n");
+				System.out.println(led + " ë°ê¸°ë¡œ ì„¤ì •ë˜ì—ˆìŠµë‹ˆë‹¤\n");
 				return;
 		}
 		}
 		void lightDown() {
 			while (true) {
-				System.out.println("\n¼³Á¤ ¹à±â·Î ³»¸®´Â Áß...");
+				System.out.println("\nì„¤ì • ë°ê¸°ë¡œ ë‚´ë¦¬ëŠ” ì¤‘...");
 				led -= 1;
 				if (led < 18) {
-					System.out.println("[!]°æ°í, ¹à±â´Â 0ÀÌÇÏ·Î ³»·Á°¥ ¼ö ¾ø½À´Ï´Ù. ¸Ş´º·Î µÇµ¹¾Æ°©´Ï´Ù.");
+					System.out.println("[!]ê²½ê³ , ë°ê¸°ëŠ” 0ì´í•˜ë¡œ ë‚´ë ¤ê°ˆ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë©”ë‰´ë¡œ ë˜ëŒì•„ê°‘ë‹ˆë‹¤.");
 					led -= 1;
 					return;
 				}
-				System.out.println(led + " ¹à±â·Î ¼³Á¤µÇ¾ú½À´Ï´Ù\n");
+				System.out.println(led + " ë°ê¸°ë¡œ ì„¤ì •ë˜ì—ˆìŠµë‹ˆë‹¤\n");
 				return;
 			
 			}
@@ -48,7 +48,7 @@ public class Light_RemoteControll extends RemoteControll{
 		@Override
 		public void powerOff() {
 			this.power = false;
-			System.out.println("ÀüµîÀ» ²ü´Ï´Ù...");
+			System.out.println("ì „ë“±ì„ ë•ë‹ˆë‹¤...");
 			return;
 			
 		}

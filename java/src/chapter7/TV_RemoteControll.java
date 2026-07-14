@@ -10,44 +10,44 @@ public class TV_RemoteControll extends RemoteControll {
 
 	@Override
 	public void powerOn() {
-		if (!power) { //¸ŞÀÎ¸Ş¼Òµå¿¡¼­ power¸¦ ÇÑ ¹ø true·Î ÇÑ ÀÌ»ó poweroff¸¦ ÇÏ¿© Àü¿øÀ» ²ôÁö ¾Ê´Â ÀÌ»ó Àü¿øÀÌ ÀÌ¹Ì ÄÑÁ®ÀÖ´Ù°í 
-			System.out.println("\nTVÀü¿øÀ» ÄÕ´Ï´Ù\n");//ºĞ·ùÇÏ±â À§ÇØ µ¿ÀÏÇÑ ¹®ÀåµéÀ» if¿Í else·Î ³ª´©¾î ÀÛ¼º
-			System.out.println("ÇöÀç Ã¤³ÎÀº " + channel + " ¹ø Ã¤³ÎÀÔ´Ï´Ù.[ÇØ´ç TV¼­ºñ½º´Â 1~100¹ø Ã¤³Î ±îÁö Áö¿øÇÕ´Ï´Ù]");
-			System.out.println("ÇöÀç TV VolumeÀº " + volume + " ÀÔ´Ï´Ù.[º¼·ıÀº 0~30±îÁö ¼³Á¤ °¡´ÉÇÕ´Ï´Ù]\n");
+		if (!power) { //ë©”ì¸ë©”ì†Œë“œì—ì„œ powerë¥¼ í•œ ë²ˆ trueë¡œ í•œ ì´ìƒ poweroffë¥¼ í•˜ì—¬ ì „ì›ì„ ë„ì§€ ì•ŠëŠ” ì´ìƒ ì „ì›ì´ ì´ë¯¸ ì¼œì ¸ìˆë‹¤ê³  
+			System.out.println("\nTVì „ì›ì„ ì¼­ë‹ˆë‹¤\n");//ë¶„ë¥˜í•˜ê¸° ìœ„í•´ ë™ì¼í•œ ë¬¸ì¥ë“¤ì„ ifì™€ elseë¡œ ë‚˜ëˆ„ì–´ ì‘ì„±
+			System.out.println("í˜„ì¬ ì±„ë„ì€ " + channel + " ë²ˆ ì±„ë„ì…ë‹ˆë‹¤.[í•´ë‹¹ TVì„œë¹„ìŠ¤ëŠ” 1~100ë²ˆ ì±„ë„ ê¹Œì§€ ì§€ì›í•©ë‹ˆë‹¤]");
+			System.out.println("í˜„ì¬ TV Volumeì€ " + volume + " ì…ë‹ˆë‹¤.[ë³¼ë¥¨ì€ 0~30ê¹Œì§€ ì„¤ì • ê°€ëŠ¥í•©ë‹ˆë‹¤]\n");
 			power = true;
 		}else {
-			System.out.println("\nTVÀü¿øÀÌ ÀÌ¹Ì ÄÑÁ® ÀÖ½À´Ï´Ù\n");
-			System.out.println("ÇöÀç Ã¤³ÎÀº " + channel + " ¹ø Ã¤³ÎÀÔ´Ï´Ù.[ÇØ´ç TV¼­ºñ½º´Â 1~100¹ø Ã¤³Î ±îÁö Áö¿øÇÕ´Ï´Ù]");
-			System.out.println("ÇöÀç TV VolumeÀº " + volume + " ÀÔ´Ï´Ù.[º¼·ıÀº 0~30±îÁö ¼³Á¤ °¡´ÉÇÕ´Ï´Ù]\n");
+			System.out.println("\nTVì „ì›ì´ ì´ë¯¸ ì¼œì ¸ ìˆìŠµë‹ˆë‹¤\n");
+			System.out.println("í˜„ì¬ ì±„ë„ì€ " + channel + " ë²ˆ ì±„ë„ì…ë‹ˆë‹¤.[í•´ë‹¹ TVì„œë¹„ìŠ¤ëŠ” 1~100ë²ˆ ì±„ë„ ê¹Œì§€ ì§€ì›í•©ë‹ˆë‹¤]");
+			System.out.println("í˜„ì¬ TV Volumeì€ " + volume + " ì…ë‹ˆë‹¤.[ë³¼ë¥¨ì€ 0~30ê¹Œì§€ ì„¤ì • ê°€ëŠ¥í•©ë‹ˆë‹¤]\n");
 		}
 	}
 		
 	void channel(){
-		while (true) {	//»ç¿ëÀÚ°¡ Á÷Á¢ 0.Á¾·á¸¦ ÀÔ·Â ÇØ ÇÁ·Î±×·¥À» ²ô±â Àü±îÁø ¹İº¹ÀûÀ¸·Î ÀÛµ¿µÇ·Î°í while(true)¸¦ »ç¿ë
-			System.out.print("´ÙÀ½ Ã¤³Î·Î ³Ñ¾î°¡½Ã·Á¸é '+' , ÀÌÀü Ã¤³Î·Î ³Ñ¾î°¡½Ã·Á¸é '-'¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		while (true) {	//ì‚¬ìš©ìê°€ ì§ì ‘ 0.ì¢…ë£Œë¥¼ ì…ë ¥ í•´ í”„ë¡œê·¸ë¨ì„ ë„ê¸° ì „ê¹Œì§„ ë°˜ë³µì ìœ¼ë¡œ ì‘ë™ë˜ë¡œê³  while(true)ë¥¼ ì‚¬ìš©
+			System.out.print("ë‹¤ìŒ ì±„ë„ë¡œ ë„˜ì–´ê°€ì‹œë ¤ë©´ '+' , ì´ì „ ì±„ë„ë¡œ ë„˜ì–´ê°€ì‹œë ¤ë©´ '-'ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 			String channelUpDown = sc.nextLine();
 			if ("+".equals(channelUpDown)) {
-				System.out.println("\n´ÙÀ½ Ã¤³Î·Î ³Ñ¾î°¡´ÂÁß...");
+				System.out.println("\në‹¤ìŒ ì±„ë„ë¡œ ë„˜ì–´ê°€ëŠ”ì¤‘...");
 				channel += 1;
 				if (channel > 100) {
-					System.out.println("[!]°æ°í, ÇØ´ç TV¼­ºñ½º´Â 100¹ø Ã¤³Î±îÁö¸¸ Áö¿øÇÕ´Ï´Ù. ¸Ş´º·Î µÇµ¹¾Æ°©´Ï´Ù");
+					System.out.println("[!]ê²½ê³ , í•´ë‹¹ TVì„œë¹„ìŠ¤ëŠ” 100ë²ˆ ì±„ë„ê¹Œì§€ë§Œ ì§€ì›í•©ë‹ˆë‹¤. ë©”ë‰´ë¡œ ë˜ëŒì•„ê°‘ë‹ˆë‹¤");
 					channel -= 1;
 					return;
 				}
-				System.out.println(channel + " ¹ø Ã¤³Î·Î ¼³Á¤µÇ¾ú½À´Ï´Ù\n");
+				System.out.println(channel + " ë²ˆ ì±„ë„ë¡œ ì„¤ì •ë˜ì—ˆìŠµë‹ˆë‹¤\n");
 				return;
 			} else if ("-".equals(channelUpDown)) {
-				System.out.println("\nÀÌÀü Ã¤³Î·Î ³Ñ¾î°¡´ÂÁß...");
+				System.out.println("\nì´ì „ ì±„ë„ë¡œ ë„˜ì–´ê°€ëŠ”ì¤‘...");
 				channel -= 1;
 				if (channel < 1) {
-					System.out.println("[!]°æ°í, ÇØ´ç TV¼­ºñ½º´Â 100¹ø Ã¤³Î±îÁö¸¸ Áö¿øÇÕ´Ï´Ù. ¸Ş´º·Î µÇµ¹¾Æ°©´Ï´Ù.");
+					System.out.println("[!]ê²½ê³ , í•´ë‹¹ TVì„œë¹„ìŠ¤ëŠ” 100ë²ˆ ì±„ë„ê¹Œì§€ë§Œ ì§€ì›í•©ë‹ˆë‹¤. ë©”ë‰´ë¡œ ë˜ëŒì•„ê°‘ë‹ˆë‹¤.");
 					channel -= 1;
 					return;
 				}
-				System.out.println(channel + " ¹ø Ã¤³Î·Î ¼³Á¤µÇ¾ú½À´Ï´Ù\n");
+				System.out.println(channel + " ë²ˆ ì±„ë„ë¡œ ì„¤ì •ë˜ì—ˆìŠµë‹ˆë‹¤\n");
 				return;
 			} else {
-				System.out.println("\n[!] Àß¸øµÈ ÀÔ·Â°¨Áö. ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù");
+				System.out.println("\n[!] ì˜ëª»ëœ ì…ë ¥ê°ì§€. ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤");
 				return;
 			}
 		}
@@ -57,38 +57,38 @@ public class TV_RemoteControll extends RemoteControll {
 	}
 	void volume() {
 		while (true) {
-			System.out.println("º¼·ıÀ» Å°¿ì½Ã·Á¸é '+', º¼·ıÀ» ÁÙÀÌ½Ã·Á¸é '-'À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+			System.out.println("ë³¼ë¥¨ì„ í‚¤ìš°ì‹œë ¤ë©´ '+', ë³¼ë¥¨ì„ ì¤„ì´ì‹œë ¤ë©´ '-'ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 			String volumeUpDown = sc.nextLine();
 			if ("+".equals(volumeUpDown)) {
-				System.out.println("\nº¼·ıÀ» Å°¿ì´Â Áß...");
+				System.out.println("\në³¼ë¥¨ì„ í‚¤ìš°ëŠ” ì¤‘...");
 				volume += 1;
 				if (volume > 30) {
-					System.out.println("[!]°æ°í, º¼·ıÀº 30±îÁö¸¸ ¼³Á¤ °¡´ÉÇÕ´Ï´Ù. ¸Ş´º·Î µÇµ¹¾Æ°©´Ï´Ù");
+					System.out.println("[!]ê²½ê³ , ë³¼ë¥¨ì€ 30ê¹Œì§€ë§Œ ì„¤ì • ê°€ëŠ¥í•©ë‹ˆë‹¤. ë©”ë‰´ë¡œ ë˜ëŒì•„ê°‘ë‹ˆë‹¤");
 					channel -= 1;
 					return;
 				}
-				System.out.println(volume + " º¼·ıÀ¸·Î ¼³Á¤µÇ¾ú½À´Ï´Ù\n");
+				System.out.println(volume + " ë³¼ë¥¨ìœ¼ë¡œ ì„¤ì •ë˜ì—ˆìŠµë‹ˆë‹¤\n");
 				return;
 			} else if ("-".equals(volumeUpDown)) {
-				System.out.println("\nº¼·ıÀ» ÁÙÀÌ´Â Áß...");
+				System.out.println("\në³¼ë¥¨ì„ ì¤„ì´ëŠ” ì¤‘...");
 				volume -= 1;
 				if (volume < 0) {
-					System.out.println("[!]°æ°í, º¼·ıÀº 0¹Ì¸¸À¸·Î ¼³Á¤ ÇÒ ¼ö ¾ø½À´Ï´Ù. ¸Ş´º·Î µÇµ¹¾Æ°©´Ï´Ù.");
+					System.out.println("[!]ê²½ê³ , ë³¼ë¥¨ì€ 0ë¯¸ë§Œìœ¼ë¡œ ì„¤ì • í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë©”ë‰´ë¡œ ë˜ëŒì•„ê°‘ë‹ˆë‹¤.");
 					volume -= 1;
 					return;
 				}
-				System.out.println(volume + " º¼·ıÀ¸·Î ¼³Á¤µÇ¾ú½À´Ï´Ù\n");
+				System.out.println(volume + " ë³¼ë¥¨ìœ¼ë¡œ ì„¤ì •ë˜ì—ˆìŠµë‹ˆë‹¤\n");
 				return;
 			} else {
-				System.out.println("\n[!] Àß¸øµÈ ÀÔ·Â°¨Áö. ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù");
+				System.out.println("\n[!] ì˜ëª»ëœ ì…ë ¥ê°ì§€. ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤");
 				return;
 			}
 		}
 	}
 	@Override
-	public void powerOff() { //abstract¸¦ »ç¿ëÇÏ¿© ÀÚ½ÄÅ¬·¡½º¿¡¼­ °­Á¦·Î Àü¿ø on/off±â´ÉÀ» Á÷Á¢ ±¸ÇöÇØ¾ß ÇÏ¹Ç·Î
-		this.power = false;//ºÎ¸ğÅ¬·¡½º¿¡¼­ ¹İÈ¯ÇÏ±â·Î Çß´ø º¯¼öÀÎ power¸¦ poweroff¿¡¼­ falseÀÇ °ªÀ¸·Î ÁöÁ¤ÇØÁÖ¾î
-		System.out.println("TVÀÇ Àü¿øÀ» Á¾·áÇÕ´Ï´Ù...");//¸ŞÀÎ¸Ş¼Òµå¿¡¼­ booleanÀÇ °ªÀÌ Àß¸øºÒ·¯°¡´Â ÀÏÀÌ ¾øµµ·Ï ÇÏ±â À§ÇØ ÀÛ¼º
+	public void powerOff() { //abstractë¥¼ ì‚¬ìš©í•˜ì—¬ ìì‹í´ë˜ìŠ¤ì—ì„œ ê°•ì œë¡œ ì „ì› on/offê¸°ëŠ¥ì„ ì§ì ‘ êµ¬í˜„í•´ì•¼ í•˜ë¯€ë¡œ
+		this.power = false;//ë¶€ëª¨í´ë˜ìŠ¤ì—ì„œ ë°˜í™˜í•˜ê¸°ë¡œ í–ˆë˜ ë³€ìˆ˜ì¸ powerë¥¼ poweroffì—ì„œ falseì˜ ê°’ìœ¼ë¡œ ì§€ì •í•´ì£¼ì–´
+		System.out.println("TVì˜ ì „ì›ì„ ì¢…ë£Œí•©ë‹ˆë‹¤...");//ë©”ì¸ë©”ì†Œë“œì—ì„œ booleanì˜ ê°’ì´ ì˜ëª»ë¶ˆëŸ¬ê°€ëŠ” ì¼ì´ ì—†ë„ë¡ í•˜ê¸° ìœ„í•´ ì‘ì„±
 		return;
 		
 	}

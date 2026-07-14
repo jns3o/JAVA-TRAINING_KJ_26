@@ -4,22 +4,22 @@ public class DmbCellPhoneExample {
 
 	public static void main(String[] args) {
 		
-		DmbCellPhone dmbCellPhone = new DmbCellPhone("ÀÚ¹ÙÆù", "°ËÁ¤", 10);
+		DmbCellPhone dmbCellPhone = new DmbCellPhone("ìë°”í°", "ê²€ì •", 10);
 		CellPhone cellphone = new CellPhone();
 		
 		cellphone.powerOn();
 		
-		System.out.println("¸ğµ¨: " + dmbCellPhone.model);
-		System.out.println("»ö»ó: " + dmbCellPhone.color);
+		System.out.println("ëª¨ë¸: " + dmbCellPhone.model);
+		System.out.println("ìƒ‰ìƒ: " + dmbCellPhone.color);
 		
-		System.out.println("Ã¤³Î: " + dmbCellPhone.channel);
+		System.out.println("ì±„ë„: " + dmbCellPhone.channel);
 		
 		
 		dmbCellPhone.powerOn();
 		dmbCellPhone.bell();
-		dmbCellPhone.sendVoice("¿©º¸¼¼¿ä.");
-		dmbCellPhone.receiveVoice("¾È³çÇÏ¼¼¿ä! Àú´Â È«±æµ¿ÀÎµ¥¿ä.");
-		dmbCellPhone.sendVoice("¾Æ- ¿¹ ¹İ°©½À´Ï´Ù.");
+		dmbCellPhone.sendVoice("ì—¬ë³´ì„¸ìš”.");
+		dmbCellPhone.receiveVoice("ì•ˆë…•í•˜ì„¸ìš”! ì €ëŠ” í™ê¸¸ë™ì¸ë°ìš”.");
+		dmbCellPhone.sendVoice("ì•„- ì˜ˆ ë°˜ê°‘ìŠµë‹ˆë‹¤.");
 		dmbCellPhone.hangUp();
 		
 		dmbCellPhone.turnOnDmb();

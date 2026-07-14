@@ -7,21 +7,21 @@ public class CellPhone {
 	
 	
 	void powerOn() {
-		System.out.println("Àü¿øÀ» ÄÕ´Ï´Ù.");
+		System.out.println("ì „ì›ì„ ì¼­ë‹ˆë‹¤.");
 	}
 	void powerOff() {
-	System.out.println("Àü¿øÀ» ²ü´Ï´Ù.");
+	System.out.println("ì „ì›ì„ ë•ë‹ˆë‹¤.");
 	}
 	void bell() {
-		System.out.println("º§ÀÌ ¿ï¸³´Ï´Ù.");
+		System.out.println("ë²¨ì´ ìš¸ë¦½ë‹ˆë‹¤.");
 	}
 	void sendVoice(String message) {
-		System.out.println("ÀÚ±â: " + message);
+		System.out.println("ìê¸°: " + message);
 	}
 	void receiveVoice(String message) {
-		System.out.println("»ó´ë¹æ: " + message);
+		System.out.println("ìƒëŒ€ë°©: " + message);
 	}
 	void hangUp() {
-		System.out.println("ÀüÈ­¸¦ ²÷½À´Ï´Ù");
+		System.out.println("ì „í™”ë¥¼ ëŠìŠµë‹ˆë‹¤");
 	}
 }
