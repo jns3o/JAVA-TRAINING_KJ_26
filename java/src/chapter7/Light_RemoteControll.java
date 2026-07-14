@@ -7,7 +7,7 @@ public class Light_RemoteControll extends RemoteControll{
 	int led = 20;
 	
 	@Override
-	void powerOn() {
+	public void powerOn() {
 		if(!power) {
 			System.out.println("\n전등을 작동합니다...");
 			System.out.println("현재 설정된 전등의 밝기는 " + led + " 입니다.[설정 가능 밝기: 0~40]\n");
@@ -16,7 +16,7 @@ public class Light_RemoteControll extends RemoteControll{
 			System.out.println("\n전등이 이미 켜져있습니다");
 			System.out.println("현재 설정된 전등의 밝기는 " + led + " 입니다.[설정 가능 밝기: 0~40]\n");
 		}
-		}	
+	}	
 		void lightUp() {	
 		while (true) {
 				System.out.println("\n설정 밝기로 올리는 중...");
@@ -44,6 +44,13 @@ public class Light_RemoteControll extends RemoteControll{
 			
 			}
 
+		}
+		@Override
+		public void powerOff() {
+			this.power = false;
+			System.out.println("전등을 끕니다...");
+			return;
+			
 		}
 	
 	

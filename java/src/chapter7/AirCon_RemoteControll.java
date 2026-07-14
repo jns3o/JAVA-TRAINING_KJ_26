@@ -8,7 +8,7 @@ public class AirCon_RemoteControll extends RemoteControll {
 	
 	
 	@Override
-	void powerOn() {
+	public void powerOn() {
 		if(!power) {
 			System.out.println("\n에어컨 전원을 켭니다");
 			System.out.println("현재 설정되어있는 온도는 " + tempeature + " 도 입니다.\n[설정 가능 온도: 영상 18~30도]\n");
@@ -17,8 +17,9 @@ public class AirCon_RemoteControll extends RemoteControll {
 			System.out.println("\n에어컨이 이미 켜져있습니다");
 			System.out.println("현재 설정되어있는 온도는 " + tempeature + " 도 입니다.\n[설정 가능 온도: 영상 18~30도]\n");
 			
-			}
-		}
+		}		
+	} 
+		
 	void airTempeatureUp() {		
 		while (true) {
 				System.out.println("\n희망 온도로 설정 중...");
@@ -45,6 +46,12 @@ public class AirCon_RemoteControll extends RemoteControll {
 			return;
 		}
 
+	}
+	@Override
+	public void powerOff() {
+		this.power = false;
+		System.out.println("에어컨의 전원을 종료합니다...");
+		return;
 	}
 }
 	
