@@ -1,5 +1,5 @@
 package practice.test260715;
-//
+
 import java.util.Random;
 
 public class rollingDice implements roll{/*주사위를 굴리는 기능을 할 클래스를 생성 한 뒤 인터페이스 roll을 상속받음*/
