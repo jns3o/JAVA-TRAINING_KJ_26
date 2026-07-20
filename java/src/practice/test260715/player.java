@@ -14,14 +14,14 @@ public class player {//player클래스는 메인메서드가 있는 play클래�
     }
 
     
-    public void addScore(int plusScore) {
+    void addScore(int plusScore) {
         this.score += plusScore; //메인에서 addScore를 호출하면 소괄호안에 있는 숫자를 받게 되므로 이번 라운드에서의 값을 score에 누적으로 더함
     }
 
-    public void addCount() {
+    void addCount() {
         this.count++; //while문이 한 바퀴 돌때마다 count가 도는걸 표시해주기 위한 메서드이다
     }
-    public int getScore() { return score; }//메인에서 getScore나 Count를 호출했을때 com과 user각 주소에 저장된 count나 score의 값을 반환해주기 위한 메서드
-    public int getCount() { return count; }
+    int getScore() { return score; }//메인에서 getScore나 Count를 호출했을때 com과 user각 주소에 저장된 count나 score의 값을 반환해주기 위한 메서드
+    int getCount() { return count; }
 }
 

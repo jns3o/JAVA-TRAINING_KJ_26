@@ -20,7 +20,7 @@ public class rollingDice implements roll{/*주사위를 굴리는 기능을 할 
 		 deaultDice[0], 즉 일반주사위의 0번 인덱스에 있는 값을 randomNum1이라는 그릇에 담게 됨
 		 예시) => int ran1 = 0
 		         int randomNum1 = defaultDice[0]
-		         randomNum1 = 1 이 되게됨(defaultDice는 1부터 순서대로 6까지 있으므로 0번 인덱스는 1이다*/
+		         randomNum1 = 1 이 되게됨(defaultDice는 1부터 순서대로 6까지 있으므로 0번 인덱스는 1이다)*/
 	}
 	@Override
 	public int rollingUnderDogDice() { //rollingDefaultDice 메소드랑 동작하는 원리는 같음
