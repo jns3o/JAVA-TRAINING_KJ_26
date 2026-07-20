@@ -23,7 +23,7 @@ public class mainPlay extends rollingDice {
 		player user = new player("유저");// player클래스를 'user'라는 주소지에다가 new player를 만들어서 게임 때 유저의 카운트,점수를 저장하고 구하기 위해 객체생성
 		player com = new player("컴퓨터");// user와 동일
 		
-		int[] userChoiceDice = choiceDice.dice(sc, round);//주사위를 고르는 로직을 따로 분리 후 
+		int[] userChoiceDice = dice.inputDice(sc, round);//주사위를 고르는 로직을 따로 분리 후 
 		
 
 		while (true) {// 게임이 끝나는 조건이 만족하기 전까지 소스가 반복재생되어야 하므로 while(true)문을 작성
@@ -41,7 +41,7 @@ public class mainPlay extends rollingDice {
 			// 라운드가 종료될때마다 몇라운드가 종료됐는지 알려주고 각 플레이어의 점수를 출력
 			System.out.println(round + "라운드 종료! 유저 총점: " + user.getScore() + " | 컴퓨터 총점: " + com.getScore() + "\n");
 
-			if (scoreJudgment.judgment(user, com)){//게임판정 메서드를 호출해서 점수판정이 false일 경우 break를 하지 않고 while문 반복
+			if (score.scoreJudgment(user, com)){//게임판정 메서드를 호출해서 점수판정이 false일 경우 break를 하지 않고 while문 반복
 				break;							   //만약 true가 반환될경우 if가 참이므로 break;가 실행되서 while문이 끝나고 메인도 끝나므로
 			}									   //게임이 끝나게 됨
 
