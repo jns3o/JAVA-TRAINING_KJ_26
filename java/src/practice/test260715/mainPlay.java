@@ -22,21 +22,16 @@ public class mainPlay extends rollingDice {
 
 		player user = new player("유저");// player클래스를 'user'라는 주소지에다가 new player를 만들어서 게임 때 유저의 카운트,점수를 저장하고 구하기 위해 객체생성
 		player com = new player("컴퓨터");// user와 동일
-
-		int[] choiceDice = new int[3];// 유저에게 게임 시작 전 사용할 주사위 3개를 입력받기 위해 choiceDice라는 이름의 int형 3칸짜리 배열 생성
-		System.out.println("\n* 게임 시작 전, 사용할 주사위 3개를 선택해주세요 *\n[1:일반 주사위, 2:역배 주사위, 3:정배 주사위, 4:에매 주사위]");
-		for (int i = 0; i < 3; i++) {// 1~3번 주사위를 입력하기 위해 for문을 작성(인덱스는 1번째칸이 0번이므로 0부터 시작하여 3이 되기전에 끝나게 작성)
-			choiceDice[i] = selectDice.selectDice(sc, i + 1);
-			// selectDice메서드를 호출해서 주사위고르기 메서드에서 플레이어가 고른 주사위를 choiceDice의 i번 배열에 저장(예 i = 0,
-			// choiceDice의 0번 즉, 1번째 배열에 n번 주사위를 저장)
-		}
+		
+		int[] userChoiceDice = choiceDice.dice(sc, round);//주사위를 고르는 로직을 따로 분리 후 
+		
 
 		while (true) {// 게임이 끝나는 조건이 만족하기 전까지 소스가 반복재생되어야 하므로 while(true)문을 작성
 			System.out.println("================================");
 			System.out.println(round + "라운드가 시작되었습니다.");// 맨위에서 초기에 round를 1로 선언하였으므로 1라운드부터 시작
 			System.out.println("현재 유저 던진 횟수: " + user.getCount() + " | 컴퓨터 던진 횟수: " + com.getCount());
 
-			score.playUserScore(user, d, choiceDice);
+			score.playUserScore(user, d, userChoiceDice);
 			score.playComScore(com, d);
 			/*
 			 * 유저가 고른 주사위와 1번 주사위만 사용하는 컴퓨터의 주사위의 랜덤값과 더하는 로직을 클래스로 따로 분리해서 구한 다음 해당 클래스에서
@@ -53,7 +48,7 @@ public class mainPlay extends rollingDice {
 			round++;// 메인에서의 모든 로직이 끝난 후 스코어판정 메서드가 거짓일 경우 게임 자체가 끝나지 않고 라운드가 끝난 것이니 라운드가 끝날 때마다 라운드가 진행되고 있다는걸 알려주기 위해
 					// round++;를 작성
 		}
-
+		
 	}
 
 }
