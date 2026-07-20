@@ -2,12 +2,10 @@ package practice.test260715;
 //
 import java.util.Scanner;
 
-public class mainPlay extends rollingDice {
+public class mainPlay {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-		rollingDice d = new rollingDice();// rollingDice클래스에 있었던 메소드들을 쓰기 위해서 객체 생성을 함
-		score scr = new score();
 		int round = 1; // while문이 돌때마다 라운드가 진행되는 것이므로 round변수를 선언(처음 시작하는 라운드는 1라운드이기에 0이 아닌 1을 선언
 
 		System.out.println("* 랜덤 주사위 게임에 오신 걸 환영합니다! *\n* 이 게임은 컴퓨터와 주사위 대결을 하는 게임 입니다! *");
@@ -31,8 +29,8 @@ public class mainPlay extends rollingDice {
 			System.out.println(round + "라운드가 시작되었습니다.");// 맨위에서 초기에 round를 1로 선언하였으므로 1라운드부터 시작
 			System.out.println("현재 유저 던진 횟수: " + user.getCount() + " | 컴퓨터 던진 횟수: " + com.getCount());
 
-			score.playUserScore(user, d, userChoiceDice);
-			score.playComScore(com, d);
+			score.playUserScore(user, userChoiceDice);
+			score.playComScore(com);
 			/*
 			 * 유저가 고른 주사위와 1번 주사위만 사용하는 컴퓨터의 주사위의 랜덤값과 더하는 로직을 클래스로 따로 분리해서 구한 다음 해당 클래스에서
 			 * 각각 주사위 3개를 더한 값을 player클래스의 user와 com에 각각 저장을 하고 각 라운드마다의 결과값을 출력하도록 설정
