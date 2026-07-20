@@ -1,5 +1,5 @@
 package practice.test260715;
-
+//
 public class score {// 유저가 고른 주사위 3개와 컴퓨터가 사용하는 1번 주사위를 3번 굴리는 값의 합을 구하고 출력하기 위한 클래스를 분리
 	static int playUserScore(player user, rollingDice d, int[] choiceDice) {// (유저의 스코어를 구하는 메서드를 생성 후 메인에서 객체 생성했던
 																			// player와 rollingDice

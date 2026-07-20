@@ -1,5 +1,5 @@
 package practice.test260715;
-
+//
 public class player {//player클래스는 메인메서드가 있는 play클래스에서 객체생성 후 메서드 호출로 쓰기 위해 일반 클래스로 생성
 	
     String name; //메인에서 유저와 컴퓨터 각각의 값을 저장하기 위해서 player클래스를 생성 후 유저와 컴퓨터라는 각각의 주소를 구분하기 위해서 String name;작성

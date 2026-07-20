@@ -1,5 +1,5 @@
 package practice.test260715;
-
+//
 import java.util.Scanner;
 
 public class dice {
