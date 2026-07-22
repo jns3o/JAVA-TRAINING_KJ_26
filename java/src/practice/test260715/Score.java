@@ -1,51 +1,61 @@
 package practice.test260715;
+
+import java.util.Random;
+
 //
-public class score {// 유저가 고른 주사위 3개와 컴퓨터가 사용하는 1번 주사위를 3번 굴리는 값의 합을 구하고 출력하기 위한 클래스를 분리
-	static roll createDice(int choice){//각 주사위 별로 따로 인터페이스로 만들고 상속받고 하여 score클래스에서 반환형을 roll로 하여 객체생성
-		if (choice == 1) return new DefaultDice();
-        if (choice == 2) return new UnderDogDice();//유저가 dice클래스에서 각 인덱스마다 고른 주사위에 맞는것을 호출하기 위함
-        if (choice == 3) return new NormalDice();
-        return new UnnervingDice();
+public class Score implements Roll{// 유저가 고른 주사위 3개와 컴퓨터가 사용하는 1번 주사위를 3번 굴리는 값의 합을 구하고 출력하기 위한 클래스를 분리
+	
+	Random r = new Random();
+	@Override
+		public int roll(int choice) {
+			if(choice == 1) {
+				int[] defaultDice = {1,2,3,4,5,6};
+				return defaultDice[r.nextInt(defaultDice.length)];
+			}
+			if(choice == 2) {
+				int[] underDogDice = {1,1,1,1,6,6};
+				return underDogDice[r.nextInt(underDogDice.length)];
+			}
+			if(choice == 3) {
+				int[] normalDice = {3,3,3,4,4,4};
+				return normalDice[r.nextInt(normalDice.length)];
+			}
+			int[] unnervingDice = {2,2,2,5,5,5};
+			return unnervingDice[r.nextInt(unnervingDice.length)];
+			
+		}
+	
+	int playScore(Player user, int[] choiceDice, boolean gameUser) {
+		int scoreBoard = 0; 
+		for (int i = 0; i < 3; i++) {
+			int choice;
+			if(gameUser) {
+				choice = choiceDice[i];
+			}else {
+				choice = 1;
+			}
+			int result = roll(choice);
+			scoreBoard += result;
+			
+		if (gameUser) {
+			System.out.println("-" + (i + 1) + "번째 주사위 결과 : [" + result + "]");
+		}else {
+			System.out.println("-" + (i + 1) + "번째 컴퓨터 주사위 결과 : [" + result + "]");
+		}
+		
+	}
+		if (gameUser) {
+			System.out.println("\n[결과] 이번 라운드 유저 합계 : " + scoreBoard + " 입니다\n");
+		}else {
+			System.out.println("\n[결과] 이번 라운드 컴퓨터 합계 : " + scoreBoard + " 입니다\n");
+		}
+		user.addScore(scoreBoard);
+		user.addCount();
+		return scoreBoard;
 	}
 	
-	static int playUserScore(player user, int[] choiceDice) {// (유저의 스코어를 구하는 메서드를 생성 후 메인에서 객체 생성했던
-																			// player와 rollingDice
-		int scoreBoard = 0; // 그리고 int배열의 choiceDice를 파라미터로 불러옴(메서드 내부에서 player객체를 새로 생성 시
-							// player클래스에서 가리키는 user라는 player와 다르게 되므로 객체 생성을 하지 않고 불러옴)
-		for (int i = 0; i < 3; i++) {// 유저가 고른 1번부터 3번 주사위까지 각각의 값을 구해줄때 n번째 주사위를 출력하기 위해 for문을 작성
-			roll selectedDice = createDice(choiceDice[i]);//만약 0번 인덱스에 유저가 1번 주사위를 선택했다면 createDice메서드에서 일반주사위의 값을 가져옴
-			int result = selectedDice.roll();//해당하는 클래스의 roll();메서드를 호출해서 랜덤값을 구하고 그걸 result에 저장
-			System.out.println("-" + (i + 1) + "번째 주사위 결과: [" + result + "]");// 결과값을 구하고 그것을 int형 result에 저장
-			scoreBoard += result;// 결과값인 result를 scoreBoard에 저장하여 매 라운드마다 누적점수를 유저에게 보여줌
-		}
-		System.out.println("\n[결과] 이번 라운드 유저 합계 : " + scoreBoard);
 
-		user.addScore(scoreBoard);// 만약 메인에서 playUserScore메서드를 호출하고 객체를 user객체를 호출했으면 scoreBoard의 값은 user라는 객체에 저장이됨								
-		user.addCount();
-		return scoreBoard;// 이미 addScore와 메서드 이름 앞에 반환형 int를 통해 play와 player클래스에 저장할건 다했지만 반환형을 void가 아닌
-							// int형으로 하였기 때문에
-							// return을 쓰지 않으면 메서드를 끝낼 수 없어서 return scoreBoard;를 입력
-	}
-
-	static int playComScore(player com) {// 컴퓨터 주사위 값을 구하는 전용 메서드 생성
-		int scoreBoard2 = 0;
-		roll comDice = new DefaultDice();
-		for (int i = 0; i < 3; i++) {
-			scoreBoard2 += comDice.roll();// for문이 3번 반복될때마다 scoreBoard2에 저장되는 일반주사위의 값이 전부 다르게 저장됨
-		}
-		System.out.println("[결과] 이번 라운드 컴퓨터 합계 : " + scoreBoard2 + "\n");
-		com.addScore(scoreBoard2);
-		com.addCount();
-		return scoreBoard2;// 마찬가지로 int형으로 반환형을 설정해주었기에 메서드를 끝내기 위해 return scoreBoard2를 작성
-	}    /*
-		 * score클래스 해석: 메인메서드에서 selectDice메서드를 호출해서 사용자에게 입력받은 각 주사위를 choiceDice[i]라는
-		 * 배열안에 저장을 한다음에 메인에서 score.playUserScore를 호출하게 되면 파라미터안에 int[] choiceDice를
-		 * 불러오게끔 작성을 해놓았고 호출이 되면 for문을 통해 choiceDice의 0번~2번 인덱스까지의 담겨있는 플레이어가 고른 주사위의 값을
-		 * 구하고 그걸 result에 저장해서 사용자에게 보여주고 scoreBoard에 저장을 해서 그 scoreBoard는 player클래스의
-		 * user라는 주소에 저장이 되게 됨
-		 */
-
-	static boolean scoreJudgment(player user, player com) {// 오직 player user,com이라는 객체와 그 객체에 저장된 스코어를 비교하기 이함이므로 객체두개만 파라미터로
+	boolean scoreJudgment(Player user, Player com) {// 오직 player user,com이라는 객체와 그 객체에 저장된 스코어를 비교하기 이함이므로 객체두개만 파라미터로
 														// 불러옴
 		if (user.getScore() >= 1000 || com.getScore() >= 1000) {// 게임 종료를 위해 user또는 com 둘 중 한쪽이라도 1000점과 같거나 넘어가면 종료
 			// 멘트 출력
@@ -63,7 +73,7 @@ public class score {// 유저가 고른 주사위 3개와 컴퓨터가 사용하
 			} else {
 				// 둘 다 1000점을 넘겼을 경우엔 원래 규칙(횟수 비교) 적용
 				if (user.getScore() < com.getScore()) {
-					System.out.println("동시에 100점을 넘겼습니다. 판정 결과 점수가 더 높은 컴퓨터의 승리입니다!");
+					System.out.println("동시에 1000점을 넘겼습니다. 판정 결과 점수가 더 높은 컴퓨터의 승리입니다!");
 				} else if (user.getScore() > com.getScore()) {
 					System.out.println("동시에 1000점을 넘겼습니다. 판정 결과 점수가 더 높은 유저의 승리입니다!");
 				} else {// 어차피 위에 if조건들이 모두 거짓이 되어버릴 경우 남은 조건은 user와 com이 둘 다 동시에 1000점을 넘었는데도 점수가 동일할

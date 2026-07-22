@@ -1,9 +1,9 @@
 package practice.test260715;
-//
-public interface roll {
 
-	public int roll();
+import java.util.Random;
 
+public interface Roll {
 	
-
+	public int roll(int choice);
+	
 }
