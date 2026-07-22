@@ -81,7 +81,7 @@ public class Student {
 			//"자"라는 글자가 있다면 지워버리겠다!
 			gender = gender.replace("자", "");
 		}
-		
+		this.gender = gender;
 	}
 	public int getKoreanScore() {
 		return koreanScore;
