@@ -3,9 +3,9 @@ package chapter13;
 public class Student {
 	private String studentId;
 	private String name;
-	private String grade;
-	private	String clas;
-	private String code;
+	private int grade;
+	private	int clas;
+	private int code;
 	private String tel;
 	private String gender;
 	private int koreanScore;
@@ -14,12 +14,25 @@ public class Student {
 	private int socialScore;
 	private int scienceScore;
 	private int averageScore;
+	
 	public String getStudentId() {
 		return studentId;
 	}
-	public void setStudentId() {
-		String averageId =  this.grade + this.clas + this.code;
-		this.studentId = averageId;
+	public void setStudentId() {//학생의 학번 생성 세터
+		String nameId = String.valueOf(this.grade);
+		String clasId = "";
+		if (this.clas < 10) {
+			clasId = "0" + this.clas;
+		}else {
+			clasId = String.valueOf(this.clas);
+		}
+		String codeId = "";
+		if (this.code < 10) {
+			codeId = "0" + this.code;
+		}else {
+			codeId = String.valueOf(this.code);
+		}
+		this.studentId = nameId + clasId + codeId; 
 	}
 	public String getName() {
 		return name;
@@ -27,31 +40,25 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getGrade() {
+	public int getGrade() {
 		return grade;
 	}
-	public void setGrade(String grade) {
-		if(grade.indexOf("학년") != -1) {
-			grade = grade.replace("학년", "");
-		}
+	public void setGrade(int grade) {
+		
 		this.grade = grade;
 	}
-	public String getClas() {
+	public int getClas() {
 		return clas;
 	}
-	public void setClas(String clas) {
-		if(clas.indexOf("반") != -1) {
-			clas = clas.replace("반", "");
-		}
+	public void setClas(int clas) {
+		
 		this.clas = clas;
 	}
-	public String getCode() {
+	public int getCode() {
 		return code;
 	}
-	public void setCode(String code) {
-		if(code.indexOf("번") != -1) {
-			code = code.replace("번", "");
-		}
+	public void setCode(int code) {
+		
 		this.code = code;
 	}
 	public String getTel() {
@@ -59,15 +66,15 @@ public class Student {
 	}
 	public void setTel(String tel) {
 		String telStr = tel.replace("-", "");
-		if(tel.length() == 8) {
+		if(tel.length() == 8) { //만약 사용자가 입력한 전화번호가 8자리일 경우 앞 010이 빠졌으므로 앞에 010을 추가해줌
 			telStr = "010" + telStr;
 		}else if(tel.length() == 11) {
 			
 		}else {
 			//062-155-1888
 		}
-		telStr = telStr.substring(0,3) + "-" + telStr.substring(3,7) + "-" + telStr.substring(7,11);
-		this.tel = telStr;
+		telStr = telStr.substring(0,3) + "-" + telStr.substring(3,7) + "-" + telStr.substring(7,11); 
+		this.tel = telStr; //사용자가 번호를 어떤 형식으로 입력을 하든 실제 번호 처럼 중간에 '-'가 들어가게 하기 위함.
 	}
 	public String getGender() {
 		return gender;
