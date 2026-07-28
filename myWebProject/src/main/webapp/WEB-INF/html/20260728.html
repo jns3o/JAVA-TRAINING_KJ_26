@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://showcases.yalco.kr/html-css/01-06/table.css">
+</head>
+<body>
+	<h1>열 그룹 태그</h1>
+	<table>
+		<colgroup>
+			<col class="weekend">
+			<col span ="5"> <!-- 일,토요일은 제외한 월~금을 의미함! -->
+			<col class="weekend">
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col">일</th>
+				<th scope="col">월</th>
+				<th scope="col">화</th>
+				<th scope="col">수</th>
+				<th scope="col">목</th>
+				<th scope="col">금</th>
+				<th scope="col">토</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+			</tr>
+			<tr>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+			</tr>
+			<tr>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+			</tr>
+			<tr>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+				<td>_</td>
+			</tr>
+		</tbody>
+	</table>
+	<hr>
+	<h1>a태그</h1>
+	<a href="./20260727.html"target="_blank">
+		<img src="./image/test.jpg" width="400" height="400"/>
+	</a>
+	<br>
+	<a href="https://www.google.com"target="_blank">새 창에서 구글 열기</a>
+	<br>
+	<a href="https://www.google.com"target="_blank">
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIqBCl92-9ug8ad3PHtsqtNUKg7qhSw-zZBAyfDhu2rQ&s=10"width="300"height="300"/>
+	</a>
+	
+	<hr>
+	<!-- a태그에 href에 현재 페이지 id를 #과 함께 주게되면 해당 태그가 시작하는 위치로 이동한다! -->
+	<a href="#target_4">타깃으로 이동</a>
+	
+	<p id="target_1">id: target_1</p>
+	<p id="target_2">id: target_2</p>
+	<p id="target_3">id: target_3</p>
+	<p id="target_4">id: target_4</p>
+	<p id="target_5">id: target_5</p>
+	
+	<hr>
+	<h1>form 사용하기</h1>
+	<form action="./20260727.html" method="get" authocomplete="off">
+		<label for="txtIp">text</label><br>
+		<input id="txtIp" type="text" placeholder="이름을 입력하세요(최대 5자)" maxlength="5"/>
+		<br><br>
+		<label for="pwdIp">password</label><br>
+		<input id="pwdIp" type="password"placeholder="4자 이상" />
+		<br><br>
+		<label for="srchIp">search</label><br>
+		<input id="srchIp" type="search" placeholder="검색">
+		<br><br>
+		<label for="tlIp">tel</label><br>
+		<input id="tlIp" type="tel">
+		<br><br>
+		<button type="sumbit">제출</button>
+		<button type="reset">초기화</button>
+	</form>
+	
+	<hr>
+	<h1>fieldset 사용하기</h1>
+	<form>
+		<fieldset>
+			<legend>반장</legend>
+			<label for="name_1">이름</label>
+			<input id="name_1" name="name_1" type="text">
+			<br><br>
+			<label for="age_2">나이</label>
+			<input id="age_1" name="age_1" type="number">
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>부반장</legend>
+			<label for="name_2">이름</label>
+			<input id="name_2" name="name_2" type="text">
+			<br><br>
+			<label for="age_2">나이</label>
+			<input id="age_2" name="age_2" type="number">
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>서기</legend>
+			<label for="name_3">이름</label>
+			<input id="name_3" name="name_3" type="text" value="홍길동" readonly>
+			<br><br>
+			<label for="age_3">나이</label>
+			<input id="age_3" name="age_3" type="number">
+		</fieldset>
+	</form>
+	<h1>다른 input 타입 사용하기 </h1>
+	<label for="rgIp">range</label>
+	<input id="rgIp" type="range" min="0" max="100"step="1">
+	
+	<label for="dtIp">date</label><br>
+	<input id="dtIp" type="date" min="2020-0101" max="2030-12-32">
+	
+	<label>check</label><br>
+	<input id="ckIp"type="checkbox" value="gohome" checked><label for="ckIp">칼퇴하기</label>
+	<input id="chkIp2"type="checkbox" value="study"><label for="ckIp2">남아서 공부하기</label>
+	<!-- 체크박스를 쓰는 경우 = 복수 선택(다중 선택)의 경우 사용 -->
+	<br>
+	<label>radio</label><br>
+	<input id="rdIp" name="gender" type="radio"value="M"><label for="rdIp">남자</label>
+	<input id="rdIp2" name="gender" type="radio"value="F"><label for="rdIp2">여자</label><br>
+	<!-- radio를 쓰는 경우 = 단일 선택(한개만 선택)의 경우 사용 -->
+	<label>가장 좋아하는 과일</label><br>
+	<input id="rdIp3" name="fruit" type="radio"><label for="rdIp3">사과</label>
+	<input id="rdIp4" name="fruit" type="radio"><label for="rdIp4">바나나</label>
+	<input id="rdIp5" name="fruit" type="radio"><label for="rdIp5">귤</label>
+	
+	<hr>
+	<h1>input 연습하기</h1>
+	<form action="#">
+		<label for="valIp">value</label><br>
+		<input id="valIp" type="text" value="지정됨"><br><br>
+		
+		<label for="afIp">autofocus</label><br>
+		<input id="afIp" type="text" placeholder="자동 포커스됨" authofocus><br><br>
+		
+		<label for="roIp">readonly</label><br>
+		<input id="roIp" type="text" value="읽기만 가능, 전송됨" readonly><br><br>
+		
+		<label for="daIp">disabled</label><br>
+		<input id="daIp" type="text" placeholder="입력 불가,전송 안 됨" disabled><br><br>
+		
+		<label for="rqIp">required</label><br>
+		<input id="rqIp" type="text" placeholder="필수 입력!" required><br><br>
+		
+		<input type="radio" name="fruit" id="f_apple" value="apple" checked>
+		<label for="f_apple">사과</label>
+		
+		<input type="radio" name="fruit" id="f_grape" value="grape">
+		<label for="f_grape">포도</label>
+		
+		<input type="radio" name="fruit" id="f_orange" value="orange" disabled>
+		<label for="f_orange">오렌지(품절)</label><br><br><br>
+		
+		<button type=sumbit">제출</button>
+	</form>
+	
+	
+</body>
+</html>
