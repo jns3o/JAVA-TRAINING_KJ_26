@@ -1,4 +1,4 @@
-package chapter8.db;
+package chapter09.db;
 
 public interface DataAccesObject {
 	public void select();

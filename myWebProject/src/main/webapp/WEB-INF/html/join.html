@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>국제인재개발원 회원가입</h1><br>
+<label for="nkname">ID</label><br>
+<input id="nkname" type="text" placeholder="아이디(최대 10자)" maxlength="10" autofocus required>
+<br><br>
+<label for="pwNum">Password</label><br>
+<input id="pwNum" type="password" placeholder="비밀번호(최대 10자)" maxlength="10" required>
+<br><br>
+<label for="name">Name</label><br>
+<input id="name" type="text" placeholder="이름(최대 6자)" maxlength="6" required>
+<br><br>
+<label for="age">나이</label><br>
+<input id="age" type="number" min="0" max="140" >
+<br><br>
+<label>성별</label><br>
+<input id="male" type="radio" name="gender">
+<label for="male">남자</label> 
+<input id="female" type="radio" name="gender">
+<label for="female">여자</label>
+<br><br>
+<label>최종학력</label><br>
+<input id="elementary" type="radio" name="school">
+<label for="elementary">초등학교</label>
+<input id="middle" type="radio" name="school">
+<label for="middle">중학교</label>
+<input id="high" type="radio" name="school">
+<label for="high">고등학교</label>
+<input id="college" type="radio" name="school">
+<label for="college">대학교</label>
+
+<br><br>
+
+<label for="place">거주지</label><br>
+<select id="place">
+		<option value="seoul">서울특별시</option>
+	<optgroup label="인천,경기도">
+		<option value="ik_inc">인천광역시</option>
+		<option value="ik_goy">경기도 고양시</option>
+		<option
+	</optgroup>
+</select>
+</body>
+</html>

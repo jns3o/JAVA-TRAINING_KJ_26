@@ -1,4 +1,4 @@
-package chapter8.practice;
+package chapter09.practice;
 
 public abstract class Class1 implements Interface3{
 	@Override

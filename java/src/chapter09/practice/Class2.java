@@ -1,4 +1,4 @@
-package chapter8.practice;
+package chapter09.practice;
 
 public class Class2 extends Class1{
 	@Override

@@ -1,4 +1,4 @@
-package chapter8.db;
+package chapter09.db;
 
 public class MySqlDao implements DataAccesObject{
 	@Override
