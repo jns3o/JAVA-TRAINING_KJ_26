@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+p {
+	color: olivedrab;
+}
+
+.blue {
+	color: lightblue;
+}
+
+.dark {
+	color: darkblue;
+}
+
+span.blue {
+	color: green;
+}
+
+#red {
+	color: darkred;
+}
+
+div, h1, button, .dark, #red {
+	color: black;
+}
+
+.outer li {
+	color: olivedrab;
+}
+
+.outer>li {
+	color: dodgerblue;
+}
+
+.outer>li li {
+	text-decoration: dashed line-through;
+}
+
+.starter ~ li {
+	font-style: italic;
+}
+
+.starter+li {
+	font-weight: bold;
+}
+
+ol li:first-child, ol li:last-child {
+	color: yellowgreen;
+}
+
+.outer>li:not(:last-child) {
+	text-decoration: line-through;
+}
+
+ul:not(.outer) li {
+	font-weight: bold;
+}
+
+li:hover {
+	font-weight: bold;
+	color: skyblue;
+}
+
+.transform{
+	text-transform: uppercase;
+	text-decoration: blue wavy underline 5px;
+	text-shadow: 0 2px plum, 0 -2px plum, 2px 0 plum, -2px 0 plum;
+}
+

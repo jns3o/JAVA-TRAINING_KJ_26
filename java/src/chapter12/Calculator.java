@@ -6,9 +6,9 @@ public class Calculator {
 	public int getMemory() {
 		return memory;
 	}
-	public synchronized void setMemory(int memory) {
+	public  void setMemory(int memory) {
 		this.memory = memory;
-		System.out.println(Thread.currentThread().getName() + ": " + this.memory);
+	//	System.out.println(Thread.currentThread().getName() + ": " + this.memory);
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {}
