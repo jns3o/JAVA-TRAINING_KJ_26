@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+form {
+	text-align: center;
+}
+</style>
 </head>
 <body>
 <form action="./join_success.html" method="post" autocomplete="off">
@@ -18,6 +23,18 @@
 <br><br>
 <label for="age">나이</label><br>
 <input id="age" type="number" min="0" max="140" >
+<br><br>
+<label for="email">이메일(e-mail)</label><br>
+<input id="email" type="text" required> @
+<select id="email" required>
+	<option value="@naver">naver.com</option>
+	<option value="@gmail">gmail.com</option>
+	<option value="@googlemail">googlemail.com</option>
+	<option value="@kakao">kakao.com</option>
+	<option value="@nate">nate.com</option>
+	<option value="@daum">daum.net</option>
+	<option value="@hanmail">hanmail.net</option>
+</select>
 <br><br>
 <label>성별</label><br>
 <input id="male" type="radio" name="gender" required>
@@ -46,13 +63,24 @@
 		<option	value="ik_paj">경기도 파주시</option>
 		<option value="ik_sgn">경기도 성남시</option>
 		<option value="ik_hwa">경기도 화성시</option>
+		<option value="ik_yong">경기도 용인시</option>
+		<option value="ik_pyeong">경기도 평택시</option>
+		<option value="ik_ich">경기도 이천시</option>
+		<option value="ik_an">경기도 안산시</option>
+		<option value="ik_kim">경기도 김포시</option>
+		<option value="ik_dong">경기도 동두천시</option>
+		<option value="ik_yang">경기도 양평군</option>
 	</optgroup>
 	<optgroup label="대전/세종/충청남도/충청북도">
 		<option value="chu_dae">대전광역시</option>
 		<option value="chu_sej">세종특별자치시</option>
 		<option value="chu_che">충청남도 천안시</option>
-		<option value="chu_cho">충청북도 청주시</option>
 		<option value="chu_ses">충청남도 서산시</option>
+		<option value="chu_bo">충청남도 보령시</option>
+		<option value="chu_tae">충청남도 태안군</option>
+		<option value="chu_cho">충청북도 청주시</option>
+		<option value="chu_jae">충청북도 재천시</option>
+		<option value="chu_bo">충청북도 보은군</option>
 	</optgroup>
 	<optgroup label="전남광주/전북/제주">
 		<option value="jgw_gwn_bukgu">전남광주통합특별시 북구</option>
@@ -64,6 +92,7 @@
 		<option value="jgw_yeosu">전남광주통합특별시 여수시</option>
 		<option value="jgw_gwangyang">전남광주통합특별시 광양시</option>
 		<option value="jgw_haenam">전남광주통합특별시 해남군</option>
+		<option value="jgw_gang">전남광주통합특별시 강진군</option>
 		<option value="jb_jeonju">전북특별자치도 전주시</option>
 		<option value="jb_gunsan">전북특별자치도 군산시</option>
 		<option value="jb_gochang">전북특별자치도 고창군</option>
@@ -80,22 +109,29 @@
 		<option value="gys_geoje">경상남도 거제시</option>
 		<option value="gys_chang">경상남도 창원시</option>
 		<option value="gys_tong">경상남도 통영시</option>
+		<option value="gys_jinju">경상남도 진주시</option>
+		<option value="gys_mil">경상남도 밀양시</option>
 	</optgroup>
 	<optgroup label="강원특별자치도">
 		<option value="gnw_sokcho">강원특별자치도 속초시</option>
 		<option value="gnw_chun">강원특별자치도 춘천시</option>
+		<option value="gnw_inje">강원특별자치도 인제시</option>
+		<option value="gnw_gang">강원특별자치도 강릉시</option>
+		<option value="gnw_dong">강원특별자치도 동해시</option>
 		<option value="gnw_pyeong">강원특별자치도 평창군</option>
+		<option value="gnw_yang">강원특별자치도 양양군</option>
+		<option value="gnw_hwa">강원특별자치도 화천군</option>
 	</optgroup>
 </select>
 <br><br><!-- rows가 세로, cols가 가로를 의미함 -->
-<label for="개인정보 이용 동의">-국제인재개발원 이용 약관</label><br>
-<textarea id="개인정보 이용 동의" rows="30" cols="100" readonly>
+<label for="개인정보 이용 동의" style="font-size: 15px; font-weight: bold;">-국제인재개발원 이용 약관</label><br>
+<textarea id="개인정보 이용 동의" rows="25" cols="70" style="font-size: 15px; font-weight: bold; color: black;"readonly>
 개인정보 보호법 제15조제1항제4호(계약 체결/이행)에 따라, 아래와 같이 개인정보를 수집·이용합니다.
 국제인재개발원 회원가입 시 하나의 계정으로 전체 국제인재개발원 서비스 이용이 가능하며, 여기에는 국제인재개발원에서 제공하는 개인 맞춤형 서비스와 인공지능(AI) 서비스가 포함됩니다.
 
 <1. 수집하는 개인정보 항목>
 회원 가입 시
-아이디, 비밀번호, 이름, 성별, 연령, 최종학력, 거주지
+아이디, 비밀번호, 이름, 이름, 이메일(e-mail), 성별, 최종학력, 거주지
 회원가입 과정에서 본인 인증 완료 시
 연계정보(CI), 중복가입 확인정보(DI), 내외국인 정보
 서비스 이용 시
@@ -121,9 +157,16 @@ IP주소, 쿠키, 서비스 이용 기록, 기기정보, 위치정보, 이미지
 국제인재개발원 서비스 제공 및 개선, 새로운 기술 개발과 신규 서비스 요소의 발굴, 서비스 경험 향상, 개인 맞춤형 서비스(광고 포함) 제공 등 국제인재개발원 서비스 전반에 인공지능(AI) 기술이 적용되며, 인공지능 기술 개발을 위하여 개인정보를 이용합니다.
 
 <3. 개인정보의 보유기간>
-국제인재개발원은 개인정보의 이용목적이 달성되면 개인정보를 지체없이 파기하고 있습니다.
+국제인재개발원은 개인정보의 보관기간을 가입일로부터 6년동안 보관하며, 1년마다 개인정보 이용 동의에 관한 문자를 발송해드리고 있습니다.
+(가입일 기준 1년마다 발송되는 문자에 동의에 관한 수신을 하지 않으실 경우 동의로 간주하고 있습니다, 수신 거부가능)
 
 자세한 내용은 개인정보 처리방침에서 확인하실 수 있습니다.
+
+<4. 동의 거부권 및 불이익>
+개인정보보호법에 따라 가입하고자 하는 이용자는 '국제인재개발원'에서 요구하는 개인정보 수집에 관한 동의여부에 대해 거부를 할 수 있으며
+단, 개인정보 수집에 관해 거부 시 회원가입 불가 또는 사이트 이용에 제약이 따를 수 있음을 알려드립니다
+또한 개인정보이용 동의 내역을 제대로 확인하지 않고 가입하였을 경우 추후 발생하는 문제 또는 법적 분쟁에 대해서 '국제인재개발원'에서는 책임을 지지 않습니다
+(기타 개인정보보호법 및 동의에 관한 내용은 'https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EB%B2%95'을 참고하여 주십시오)
 </textarea>
 <br>
 <input id="agree" type="checkbox" required>
