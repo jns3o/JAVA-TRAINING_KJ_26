@@ -5,26 +5,63 @@
 <title>Insert title here</title>
 <style>
 form {
-	text-align: center;
+	display: block;
+	margin-block-start: 1em;
+	background-color: #FFFFFF;
+	margin: 30px auto;
+	padding: 15px 30px;
+	box-shadow: 0 0 10px lightgrey;
+	width: 500px;
+	
+}
+body{
+	background-color: #F6F6F6;
+}
+button {
+	padding: 10px 20px;
+	font-size: 15px;
+	font-weight: bold;
+	border: none;
+}
+button[type="submit"]{
+	background-color: #007bff;
+	color: #FFFFFF;
+	font-weight: bold;
+	
+}
+textarea{
+	box-shadow: 3px 3px lightgrey;
 }
 </style>
 </head>
 <body>
 <form action="./join_success.html" method="post" autocomplete="off">
-<h1>국제인재개발원 회원가입</h1><br>
+<div class="title">
+<h2 style="text-align: center;">국제인재개발원 회원가입</h2>
+</div><br>
+<div class="form-group">
 <label for="nkname">ID</label><br>
 <input id="nkname" type="text" placeholder="아이디(최대 10자)" maxlength="10" autofocus required>
-<br><br>
+</div>
+<br>
+<div class="form-group">
 <label for="pwNum">Password</label><br>
 <input id="pwNum" type="password" placeholder="비밀번호(최대 10자)" maxlength="10" required>
-<br><br>
+</div>
+<br>
+<div class="form-group">
 <label for="name">Name</label><br>
 <input id="name" type="text" placeholder="이름(최대 6자)" maxlength="6" required>
-<br><br>
+</div>
+<br>
+<div class=form-group">
 <label for="age">나이</label><br>
 <input id="age" type="number" min="0" max="140" >
-<br><br>
+</div>
+<br>
+<div class="form-group">
 <label for="email">이메일(e-mail)</label><br>
+<div class="email-group">
 <input id="email" type="text" required> @
 <select id="email" required>
 	<option value="@naver">naver.com</option>
@@ -35,13 +72,18 @@ form {
 	<option value="@daum">daum.net</option>
 	<option value="@hanmail">hanmail.net</option>
 </select>
-<br><br>
+	</div>
+</div>
+<br>
+<div class="form-group">
 <label>성별</label><br>
 <input id="male" type="radio" name="gender" required>
 <label for="male">남자</label> 
 <input id="female" type="radio" name="gender">
 <label for="female">여자</label>
-<br><br>
+</div>
+<br>
+<div class="form-group">
 <label>최종학력</label><br>
 <input id="elementary" type="radio" name="school" required>
 <label for="elementary">초등학교</label>
@@ -51,9 +93,9 @@ form {
 <label for="high">고등학교</label>
 <input id="college" type="radio" name="school">
 <label for="college">대학교</label>
-
-<br><br>
-
+</div>
+<br>
+<div class="form-group">
 <label for="place">거주지</label><br>
 <select id="place">
 		<option value="seoul">서울특별시</option>
@@ -123,9 +165,11 @@ form {
 		<option value="gnw_hwa">강원특별자치도 화천군</option>
 	</optgroup>
 </select>
+</div>
 <br><br><!-- rows가 세로, cols가 가로를 의미함 -->
-<label for="개인정보 이용 동의" style="font-size: 15px; font-weight: bold;">-국제인재개발원 이용 약관</label><br>
-<textarea id="개인정보 이용 동의" rows="25" cols="70" style="font-size: 15px; font-weight: bold; color: black;"readonly>
+<div class="form-group">
+<label for="약관">-국제인재개발원 이용 약관</label><br>
+<textarea id="약관" rows="15" cols="60" style="font-size: 13px; font-weight: normal;"readonly>
 개인정보 보호법 제15조제1항제4호(계약 체결/이행)에 따라, 아래와 같이 개인정보를 수집·이용합니다.
 국제인재개발원 회원가입 시 하나의 계정으로 전체 국제인재개발원 서비스 이용이 가능하며, 여기에는 국제인재개발원에서 제공하는 개인 맞춤형 서비스와 인공지능(AI) 서비스가 포함됩니다.
 
@@ -174,6 +218,7 @@ IP주소, 쿠키, 서비스 이용 기록, 기기정보, 위치정보, 이미지
 <br><br><br>
 <button type="submit">가입완료</button>
 <button type="reset">취소</button>
+</div>
 </form>
 </body>
 </html>
