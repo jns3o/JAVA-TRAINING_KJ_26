@@ -12,6 +12,7 @@ form {
 	padding: 15px 30px;
 	box-shadow: 0 0 10px lightgrey;
 	width: 500px;
+	border-radius: 20px;
 	
 }
 body{
@@ -32,36 +33,93 @@ button[type="submit"]{
 textarea{
 	box-shadow: 3px 3px lightgrey;
 }
+form-group{
+	display: inline-block;
+}
+input [type="text"]
+input [type="password"]
+input [type="number"]{
+	margin: 0 4px 0 0;
+	padding: 4px 0;
+	width: 490px;
+	height: 32px;
+	border: none;
+}
+ul > li {
+	display: inline-block;
+	font-size: 30px;
+	background-color: none;
+	color: #565656;
+	font-weight: bold;
+	padding: 0px 0px 15px;
+	border: none;
+	width: 300px;
+}	
+	ul {
+	margin: 30px 30px;
+	padding: 5px 0 5px 0;
+	text-align: center;
+}
 </style>
 </head>
 <body>
+<div class="banner">
+<ul>
+	<li>
+		<a href="./main.html" style="color: #565656; text-decoration: none">홈</a>
+	</li>
+	<li>
+		<a href="./introduce.html" style="color: #565656; text-decoration: none">인사말</a>
+	</li>
+	<li>
+		<a href="./board.html" style="color: #565656; text-decoration: none">게시판</a>
+	</li>
+	<li>
+		<a href="./join.html" style="color: #565656; text-decoration: none">회원가입</a>
+	</li>
+</ul>
+<hr style="box-shadow: 0 0 10px lightgrey;">
+</div>
 <form action="./join_success.html" method="post" autocomplete="off">
 <div class="title">
 <h2 style="text-align: center;">국제인재개발원 회원가입</h2>
 </div><br>
-<div class="form-group">
-<label for="nkname">ID</label><br>
-<input id="nkname" type="text" placeholder="아이디(최대 10자)" maxlength="10" autofocus required>
+<div class="form-group" >
+<label for="nkname" style="text-decoration: underline red;">ID</label><br>
+<span class="form-group">
+<input id="nkname" type="text" placeholder="아이디(최대 10자)" maxlength="10" 
+style="margin: 0 4px 0 0; padding:4px 0; width:490px; height: 32px; border: none;" autofocus required>
+</span>
 </div>
 <br>
 <div class="form-group">
-<label for="pwNum">Password</label><br>
-<input id="pwNum" type="password" placeholder="비밀번호(최대 10자)" maxlength="10" required>
+<label for="pwNum" style="text-decoration: underline red;">Password</label><br>
+<span class="form-group">
+<input id="pwNum" type="password" placeholder="비밀번호(최대 10자)" 
+style="margin: 0 4px 0 0; padding:4px 0; width:490px; height: 32px; border: none;" maxlength="10" required>
+</span>
 </div>
 <br>
 <div class="form-group">
-<label for="name">Name</label><br>
-<input id="name" type="text" placeholder="이름(최대 6자)" maxlength="6" required>
-</div>
-<br>
-<div class=form-group">
-<label for="age">나이</label><br>
-<input id="age" type="number" min="0" max="140" >
+<label for="name" style="text-decoration: underline red;">Name</label><br>
+<span class="form-group">
+<input id="name" type="text" placeholder="이름(최대 6자)" maxlength="6" 
+style="margin: 0 4px 0 0; padding:4px 0; width:490px; height: 32px; border: none;" required>
+</span>
 </div>
 <br>
 <div class="form-group">
-<label for="email">이메일(e-mail)</label><br>
+<label for="age" style="text-decoration: underline red;">나이</label><br>
+<span class="form-group">
+<input id="age" type="number" min="0" max="140" placeholder="나이 입력(또는 선택)"
+style="margin: 0 4px 0 0; padding:4px 0; width:490px; height: 32px; border: none;">
+</span>
+</div>
+<br>
+<div class="form-group">
+<label for="email" style="text-decoration: underline red;">이메일(e-mail)</label><br>
 <div class="email-group">
+<span class="form-group">
 <input id="email" type="text" required> @
 <select id="email" required>
 	<option value="@naver">naver.com</option>
@@ -72,6 +130,7 @@ textarea{
 	<option value="@daum">daum.net</option>
 	<option value="@hanmail">hanmail.net</option>
 </select>
+</span>
 	</div>
 </div>
 <br>
