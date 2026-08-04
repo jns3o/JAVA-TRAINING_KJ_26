@@ -6,7 +6,7 @@ public class BackBigNum {
 
 	public static void main(String[] args) {
 		Random r = new Random(); //각 인덱스마다 랜덤한 숫자를 부여하기 위해 랜덤 객체 생성
-		int array = 100; //랜덤숫자들을 넣을 배열을 정하는 변수(array)의 값만 바꾸면 밑에 로직들도 따라서 바뀜
+		int array = 1000000; //랜덤숫자들을 넣을 배열을 정하는 변수(array)의 값만 바꾸면 밑에 로직들도 따라서 바뀜
 		int[] numbers = new int[array]; //array의 값만큼의 int형 배열이 'numbers'라는 이름으로 만들어짐
 
 		for (int i = 0; i < numbers.length; i++) { //'numbers'배열의 길이 만큼 각 인덱스마다 숫자를 넣기 위한 for문
