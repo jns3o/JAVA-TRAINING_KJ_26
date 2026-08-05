@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.box {
+	width: 1200px;
+	height: 1200px;
+	}
+	.s {
+	display: inline-block;
+	width: 390px;
+	height: 390px;
+	background-color: #ddd;
+	z-index: 2;
+	}
+	.y {
+	background-color: rgb(250, 250, 30);
+	position: absolute;
+	top: 30px;
+	left: 50px; 
+	z-index: 1;
+	}
+	.r {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 2;
+	background-color: red;
+	}
+</style>
+</head>
+<body>
+<div class="box">
+	<div class="s"></div>
+	<div class="s"></div>
+	<div class="s"></div>
+	<div class="s r"></div>
+	<div class="s y"></div>
+	<div class="s"></div>
+	<div class="s"></div>
+	<div class="s"></div>
+	<div class="s"></div>
+</div>
+</body>
+</html>
