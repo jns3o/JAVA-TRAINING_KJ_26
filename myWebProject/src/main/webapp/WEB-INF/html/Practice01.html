@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>사이드바 메뉴 연습</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            padding: 30px;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* 1. 체크박스는 숨기기 */
+        #menu-toggle {
+            display: none;
+        }
+
+        /* 2. 햄버거 버튼 꾸미기 */
+        .hamburger {
+            display: inline-block;
+            font-size: 26px;
+            cursor: pointer;
+            padding: 8px 14px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            user-select: none;
+        }
+
+        .hamburger:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* 3. 사이드바 메뉴 스타일 */
+        .menu-list {
+            position: fixed;
+            top: 0;
+            left: -260px; /* 평소에는 숨김 */
+            width: 250px;
+            height: 100%;
+            background-color: #ffffff;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            border: none;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.08);
+            transition: left 0.3s ease;
+            z-index: 1000;
+        }
+
+        /* 닫기 버튼(X) 스타일 */
+        .close-btn {
+            display: block;
+            text-align: right;
+            padding: 20px 20px 10px 0;
+            font-size: 22px;
+            cursor: pointer;
+            color: #888;
+        }
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .menu-list li a {
+            display: block;
+            padding: 16px 25px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .menu-list li a:hover {
+            background-color: #f4f6f8;
+            color: #007bff;
+        }
+
+        /* 4. 체크박스가 체크되면 사이드바가 튀어나옴 */
+        #menu-toggle:checked ~ .menu-list {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 체크박스와 햄버거 버튼 -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">☰</label>
+
+    <!-- 사이드바 메뉴 목록 -->
+    <ul class="menu-list">
+        <!-- 닫기(X) 버튼 : 누르면 체크박스가 해제되면서 닫힘! -->
+        <li><label for="menu-toggle" class="close-btn">✕</label></li>
+        <li><a href="#">소개</a></li>
+        <li><a href="#">게시글</a></li>
+        <li><a href="#">회원가입</a></li>
+    </ul>
+
+</body>
+</html>

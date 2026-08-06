@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-
+// [!]"숫자를 입력 해주세요" 에서 십만단위에 근접하거나 그 이상의 값을 입력할 경우 아직 calculator의 로직은
+//     값을 하나하나 더해가며 최소공배수를 구해가는 방식이라 값이 방대해지면 프로그램이 터질 수도 있음.
 public class Practice01 {
 	public static void main(String[] args) {
 		output(); 
-		/* 메인이 실행되면 곧바로 outPut메서드를 호출하여 outPut메서드를 실행하고
+		/* 메인이 실행되면 곧바로 output메서드를 호출하여 output메서드를 실행하고
 		 * 소스 순서대로 쭉 실행된다
 		 */
 		
