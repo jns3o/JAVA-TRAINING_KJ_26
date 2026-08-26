@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JAVA SCRIPT</title>
+<script>
+// 주석입니다!
+console.log("hello :D");
+// let과 const는 아무값(정수,실수,문자) 다 넣을 수있음
+// let은 데이터 변경 O , const는 데이터 변경 X
+const d = 3.14;
+
+let a = 10;
+let b = "안녕하세요!";
+let c = 9.21;
+let e = true;
+
+console.log(typeof a);
+console.log(typeof b);
+console.log(typeof c);
+console.log(typeof e);
+
+console.log(a + c);
+console.log(3-2);
+console.log(a + b);
+console.log(a + b + c);
+// JS에서 '=='는 자료형(String,num)관계 없이 내용만 비교
+// 단 '==='은 자료형과 내용을 모두 비교해 따짐
+let test1 = 5;
+let test2 = '5';
+
+console.log(test1 === test2);
+// 삼항 연산자 [console.log](조건식 | 'true의 경우 실행' : 'false의 경우 실행')
+//a = 50;
+//console.log(a > 10 ? "a는 10보다 크다" : "a는 10보다 크지 않다"); // if문 하고 비슷 [ex: 1줄짜리 if문]
+
+let person = {
+		name : '김철수',
+		age : 25,
+		married : false
+};
+ let person2 = {
+		 name : '홍길동',
+		 age : 24,
+		 married: false
+ };
+ 
+ let personList = [person, person2, '안녕하세요!', 3.141592];
+ 
+ let person3 = {
+		 name : '김영희',
+		 age : 22,
+		 married : false
+ };
+ personList.push(person3);
+ console.log(personList);
+ 
+ 
+ 
+
+//let key = 'name';
+
+//console.log("사람이름 : " + person.name);
+//console.log("사람이름 : " + person[key]);
+// 변수에 없는 값이면 추가, 있는 값이면 변경, 오타나면 없는값으로 처리되니 오타 나지 않도록 주의
+//person.job = '프로그래머';
+////person.age = 30;
+
+//console.log(person);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
