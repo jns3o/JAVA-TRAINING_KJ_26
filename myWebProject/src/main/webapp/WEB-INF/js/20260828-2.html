@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	padding: 16px 32px;
+	font-size: 1.2em;
+}
+button, input[type=text]{
+	padding: 0.5em 1em;
+	font-size: 1.2em;
+}
+#clickPosition {
+	display: inline-block;
+	margin: 24px 0;
+	width: 400px;
+	height: 240px;
+	line-height: 240px;
+	text-align: center;
+	background-color: lightblue;
+}
+</style>
+</head>
+<body>
+	<button id="myButton">이벤트를 부여하세요.</button>
+	<br>
+	<div id="clickPosition">
+		클릭 전
+	</div>
+	<br>
+	<input id="myInput" type="text">
+</body>
+<script>
+const $myButton = document.querySelector('#myButton');
+// 클릭할시 백그라운드 컬러의 색상을 바꿔주는 식
+myButton.addEventListener('click', function(){
+	document.querySelector("#clickPosition").style.backgroundColor = 'red';
+});
+
+const logMouseEnter = () => { console.log('진입');};
+const logMouseLeave = () => { console.log('이탈');};
+myButton.addEventListener('mouseenter', logMouseEnter);
+myButton.addEventListener('mouseleave', logMouseLeave);
+
+const clickPosition = document.querySelector('#clickPosition');
+clickPosition.addEventListener('click', function (e) {
+	console.log(e);
+});
+clickPosition.addEventListener('click', function (e) {
+	let text = 'x :';
+	text += e.clientX;
+	text += ',  y: ';
+	text += e.clientY;
+
+	clickPosition.textContent = text;
+});
+const myInput = document.querySelector('#myInput');
+myInput.addEventListener('focus', () => {
+	myInput.setAttribute('placeHolder', '포커스된 상태');
+});
+myInput.addEventListener('blur', () => {
+	myInput.setAttribute('placeHolder', '블러 된 상태');
+});
+myInput.addEventListener('change', (e) => {
+	console.log(e.target.value)
+});
+myInput.addEventListener('keyup', (e) => {
+	console.log(e.key);
+});
+</script>
+</html>

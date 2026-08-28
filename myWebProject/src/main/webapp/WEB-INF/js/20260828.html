@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>요소 조작하기2</title>
+<style>
+body {
+	padding: 16px 32px;
+}
+a, input, label {
+	display: inline-block;
+	margin-bottom: 1em;
+	font-size: 1.24em;
+}
+</style>
+</head>
+<body>
+	<a href="https://www.naver.com" target="blank"> 웹사이트 바로가기</a>
+	<br>
+	<input type="text" name="message" value="Hello World!">
+	<br>
+	<input type="checkbox" id= "checkbox" name="toggle">
+	<label for="checkbox">체크박스</label>
+</body>
+<script>
+const $hyperlink = document.querySelector('a');
+console.log($hyperlink);
+
+$hyperlink.getAttribute('href');
+console.log($hyperlink.getAttribute('href'));
+
+$hyperlink.setAttribute('href', 'https://www.yalco.kr');
+$hyperlink.setAttribute('class', 'soldout sweet');
+$hyperlink.setAttribute('style', 'margin: 10px; border: 1px solid #000');
+console.log($hyperlink.getAttribute('class'));
+
+const $message = document.querySelector('input[name=message]');
+const $toggle = document.querySelector('input[name=toggle]');
+
+console.log($message);
+console.log($toggle);
+
+$message.value = '안녕하세요!';
+
+$toggle.checked = !$toggle.checked;
+</script>
+</html>
