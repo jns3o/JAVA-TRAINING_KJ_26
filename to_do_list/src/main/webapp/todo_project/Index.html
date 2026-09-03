@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link  rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<main class="main-box">
+<h1>오늘의 할 일</h1>
+<p>오늘 해야 할 일을 등록해보세요!</p>
+<div class="input-group">
+    <input id="insertList" class="work" type="text" placeholder=" " />
+    <label>할 일을 입력하세요</label>
+</div>
+<button id="add_btn" class="plus">+</button>
+<div class="notice-box"></div>
+<hr><button id="delete" class="delete">일괄삭제</button>
+<h3>할 일 목록</h3>
+<ul id="myList">
+	<li>아직 할 일이 없습니다</li>
+</ul>
+</main>
+</body>
+<script src="./js/script.js"></script>
+</html>
+<!-- 인풋요소의 placeholder의 값을 라벨로 분리해서 인풋창이 포커스가 될 경우 라벨의 내용이 위로 올라가도록 하기 위해 분리 -->
