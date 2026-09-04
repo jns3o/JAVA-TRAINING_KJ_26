@@ -8,30 +8,85 @@
 
 body {
 	font-family: 'yg-jalnan', sans-serif;
-	background-color: #F6F6F6;
 	background-image: url("https://wallpapercave.com/wp/wp12636731.jpg");
 	background-size: cover;
-	background-position: center 20%:
+	background-position: center 40%;
+	background-attachment: fixed; /* 이미지가 어떤 경우에도 잘리지 않고 고정되게 만드는 문장*/
+}
+.title {
+    background-color: rgba(3, 199, 90, 0.6);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    width: 200px;
+    margin: 0 auto;
 }
 .main-box {
 	width: 50%;
 	padding: 20px;
 	margin: 25px auto;
-	background-color: rgba(3, 199, 90, 0.7);
+	background-color: rgba(3, 199, 90, 0.6);
 	border-radius: 10px;
-	border: 1px solid #aaa;
+	border: none;
 	text-align: center;
-	box-shadow: 0 0 10px lightgrey;
+	box-shadow: 0 0 20px lightgrey;
+}
+.listArea{
+	max-height: 400px; 
+    overflow-y: auto;  
+    
 }
 ul { padding: 0; }
 ul > li {
-	list-style: none;
-	margin: 0 0 5px 0;
+    list-style: none;
+    margin: 0 0 10px 0;
+    word-break: break-all; /*한글,영어,숫자 그 어떤 문자가 입력이 되든 부모요소를 넘기려할때 강제로 줄바꿈을 시킴*/
+    display: flex;         
+    align-items: flex-start; /* 삭제버튼과 체크박스가 textContent가 길어져서 위아래로 늘어나더라도 항상 상단에 배치되게됨*/
+    justify-content: center;
+    gap: 15px; 
+}
+ul > li > button {
+    margin-left: auto; /*삭제버튼이 textContent를 기준으로 오른쪽으로 딱 붙게됨 */
+    flex-shrink: 0;    
+}
+.toggle-input {
+    display: none;
+}
+
+.toggle-label {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /*어떤 일이 있어도 체크박스와 삭제버튼이 모양을 유지하게 해주는 요소*/
+}
+
+.toggle-label::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+.toggle-input:checked + .toggle-label {
+    background-color: rgb(3, 199, 90);
+}
+.toggle-input:checked + .toggle-label::before {
+    transform: translateX(16px);
 }
 button {
 	margin: 0 10px;
 	border-radius: 10px;
-	background-color: rgb(3, 199, 90);
+	background-color: rgba(3, 199, 90, 0.75);
 	border: 0.5px solid #FFFFFF;
 }
 button:hover{
@@ -68,7 +123,6 @@ input {
     margin: 30px 20px 0 20px;
     text-align: left;
 }
-
 .work {
     background-color: transparent;
     width: 100%;

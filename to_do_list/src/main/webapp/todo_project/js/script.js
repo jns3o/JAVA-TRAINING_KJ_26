@@ -21,13 +21,22 @@ buttonAdd.addEventListener('click', () => {
 	
 	// 사용자가 할 일목록(input요소)에 작성한 값을 inputList에 담았는데 그걸 위에서 inputText 변수에 넣었으므로 <li list_ 'total'> </li> 사이에
 	// textContent라는 함수를 이용해 텍스트값을 넣어줌
-	listItem.textContent = inputText; //<li>공부하기~</li>
-	
 	let chkBox = document.createElement('input'); // <input>
-	chkBox.setAttribute('type', 'checkbox'); // <input type="checkbox">
-	chkBox.setAttribute('id', 'chk' + total); // <input type="checkbox" id="chk1">
-	listItem.prepend(chkBox);
-	//<li><input type="checkbox" id="chk1">공부하기~</li>
+		chkBox.setAttribute('type', 'checkbox'); // <input type="checkbox">
+		chkBox.setAttribute('id', 'chk' + total); // <input type="checkbox" id="chk1">
+		chkBox.className = 'toggle-input';
+		
+		let chkLabel = document.createElement('label');
+		chkLabel.setAttribute('for', 'chk' + total);
+		chkLabel.className = 'toggle-label';
+		
+		let textSpan = document.createElement('span');
+		textSpan.textContent = inputText;
+		
+		listItem.appendChild(chkBox);
+		listItem.appendChild(chkLabel);
+		listItem.appendChild(textSpan);// 텍스트만 따로 span태그로 감싸서 체크박스 활성화 시 텍스트에만 줄이 그이게 하는 요소
+		//<li><input type="checkbox" id="chk1"><label for="chk1"></label><span>공부하기~</span></li>
 	
 	let deleteBtn = document.createElement('button');//<button></button>
 	deleteBtn.id = 'dlt_btn';
@@ -70,18 +79,20 @@ list.addEventListener("click", event => {
 		}
 	}
 	// 만약 ul요소안에서 클릭을 한 타겟이 체크박스일 경우 체크박스가 체크될 경우 검정과 흰색일직선을 그리고 해제하면 다시 검정을 칠하고 선을 없애는 if문
-	if (event.target.type === 'checkbox'){
-		const liItem = event.target.closest('li'); 
-		if(event.target.checked){
-			liItem.style.color = '#FFFFFF';
-			liItem.style.textDecoration = 'line-through';
-			liItem.style.textDecorationColor = 'black';
-		}else{
-			liItem.style.color = 'black';
-			liItem.style.textDecoration = 'none';
+	if (event.target.type === 'checkbox') {
+		    const liItem = event.target.closest('li'); 
+		    const targetSpan = liItem.querySelector('span'); // li 안에 있는 span(글자 캡슐)을 찾음
+		    
+		    if (event.target.checked) {
+		        targetSpan.style.color = '#FFFFFF';
+		        targetSpan.style.textDecoration = 'line-through';
+		        targetSpan.style.textDecorationColor = 'black';
+		    } else {
+		        targetSpan.style.color = 'black';
+		        targetSpan.style.textDecoration = 'none';
+		    }
 		}
-	}
-});
+	});
 // 만약 html에서 input창에 아무것도 적지않고 'enter' 또는 'click'을 하였을때 경고문구 띄우는 함수!
 function notice(){
 	let say = '';
